@@ -4,12 +4,17 @@
 \addvspace {10.0pt}
 \addvspace {10.0pt}
 \addvspace {10.0pt}
-\contentsline {table}{\numberline {4--1}{\ignorespaces 指向一个表格的表目录索引}}{12}{table.4.1}
-\contentsline {table}{\numberline {4--2}{\ignorespaces 出现在表目录的标题}}{12}{table.4.2}
+\contentsline {table}{\numberline {4--1}{\ignorespaces IOB，IOE，IOBES标注策略比较}}{31}{table.4.1}
 \addvspace {10.0pt}
-\contentsline {table}{\numberline {5--1}{\ignorespaces 指向一个表格的表目录索引}}{24}{table.5.1}
-\contentsline {table}{\numberline {5--2}{\ignorespaces 出现在表目录的标题}}{24}{table.5.2}
-\addvspace {10.0pt}
+\contentsline {table}{\numberline {5--1}{\ignorespaces 稳定算子对不同的初始学习率的影响}}{41}{table.5.1}
+\contentsline {table}{\numberline {5--2}{\ignorespaces 稳定算子在不同模型中的PPL}}{41}{table.5.2}
+\contentsline {table}{\numberline {5--3}{\ignorespaces 加入$\beta -L2norm$的比较}}{43}{table.5.3}
+\contentsline {table}{\numberline {5--4}{\ignorespaces {\it Accuracy of word-level features on all data-sets we used }}}{44}{table.5.4}
+\contentsline {table}{\numberline {5--5}{\ignorespaces {\it Perplexity comparison of different methods for training proposed model}}}{44}{table.5.5}
+\contentsline {table}{\numberline {5--6}{\ignorespaces {\it Perplexity comparison of different LMs on PTB data set}}}{45}{table.5.6}
+\contentsline {table}{\numberline {5--7}{\ignorespaces {\it Perplexity, WER (\%) and SER (\%) comparison on Chinese SMS task}}}{45}{table.5.7}
+\contentsline {table}{\numberline {5--8}{\ignorespaces {\it Perplexity, WER (\%) and SER (\%) comparison on English Fisher task}}}{46}{table.5.8}
+\contentsline {table}{\numberline {5--9}{\ignorespaces {\it Perplexity on different test-data}}}{47}{table.5.9}
 \addvspace {10.0pt}
 \addvspace {10.0pt}
 \addvspace {10.0pt}

@@ -19,636 +19,1620 @@
 
 \refsection{0}
   \sortlist[entry]{none/global/}
-    \entry{Meta_CN}{book}{}
-      \name{author}{4}{}{%
-        {{hash=9ab9c3c09bd5878aad760c86df0c1249}{%
-           family={崔万照},
-           familyi={崔\bibinitperiod}}}%
-        {{hash=7411d149be89d05686ef42f238c8b89a}{%
-           family={马伟},
-           familyi={马\bibinitperiod}}}%
-        {{hash=9befaccd5d925099e2b7cb6eeb9f55cc}{%
-           family={邱乐徳},
-           familyi={邱\bibinitperiod}}}%
-        {{hash=275c8273f40125901f852dc551ed8c92}{%
-           family={张洪太},
-           familyi={张\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {北京}%
-      }
-      \list{publisher}{1}{%
-        {国防工业出版社}%
-      }
-      \strng{namehash}{099416bb6e62c288b7dcb36bbed5853a}
-      \strng{fullhash}{6d0a3b0be0f22a57cb3d759f594fdd54}
-      \strng{authornamehash}{099416bb6e62c288b7dcb36bbed5853a}
-      \strng{authorfullhash}{6d0a3b0be0f22a57cb3d759f594fdd54}
-      \field{sortinit}{2}
-      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{电磁超介质及其应用}
-      \field{usera}{M}
-      \field{usere}{崔万照 and 马伟 and 邱乐徳 and 张洪太}
-      \field{userf}{崔万照 and 马伟 and 邱乐徳 and 张洪太}
-      \field{year}{2008}
-      \field{dateera}{ce}
-      \keyw{Meta_CN}
-    \endentry
-    \entry{chen2007act}{article}{}
-      \name{author}{2}{}{%
-        {{hash=742f8103481c80bc5dcf8cf53a3fff91}{%
-           family={Chen},
-           familyi={C\bibinitperiod},
-           given={H.},
-           giveni={H\bibinitperiod}}}%
-        {{hash=26ab70a416fb2cbc5ab7faf41d686367}{%
-           family={Chan},
-           familyi={C\bibinitperiod},
-           given={C.\bibnamedelimi T.},
-           giveni={C\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {AIP}%
-      }
-      \strng{namehash}{3f949ec31b2f0e1410ab16a1ce8bdc35}
-      \strng{fullhash}{3f949ec31b2f0e1410ab16a1ce8bdc35}
-      \strng{authornamehash}{3f949ec31b2f0e1410ab16a1ce8bdc35}
-      \strng{authorfullhash}{3f949ec31b2f0e1410ab16a1ce8bdc35}
-      \field{sortinit}{2}
-      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Applied Physics Letters}
-      \field{title}{Acoustic cloaking in three dimensions using acoustic metamaterials}
-      \field{usera}{J}
-      \field{usere}{Chen, H. and Chan, C. T.}
-      \field{userf}{Chen, H. and Chan, C. T.}
-      \field{volume}{91}
-      \field{year}{2007}
-      \field{dateera}{ce}
-      \field{pages}{183518}
-      \range{pages}{1}
-      \keyw{chen2007act}
-    \endentry
-    \entry{DPMG}{inproceedings}{}
-      \name{author}{5}{}{%
-        {{hash=3479841c92b895e18d797966288dc3a6}{%
-           family={Kim},
-           familyi={K\bibinitperiod},
-           given={Sangbum},
-           giveni={S\bibinitperiod}}}%
-        {{hash=40e9bf4635a74f0d6e7c54315737d88b}{%
-           family={Woo},
-           familyi={W\bibinitperiod},
-           given={Namyoon},
-           giveni={N\bibinitperiod}}}%
-        {{hash=fc410aad61e9e9e7949623bbb06de5cb}{%
-           family={Yeom},
-           familyi={Y\bibinitperiod},
-           given={Heon\bibnamedelima Y.},
-           giveni={H\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
-        {{hash=3f94fb2c4b76892f77ebad98034f39f5}{%
-           family={Park},
-           familyi={P\bibinitperiod},
-           given={Taesoon},
-           giveni={T\bibinitperiod}}}%
-        {{hash=6445f9c7cabab4b7fec5801aebadd264}{%
-           family={Park},
-           familyi={P\bibinitperiod},
-           given={Hyoungwoo},
-           giveni={H\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Venice, Italy}%
-      }
-      \strng{namehash}{f7feb41fb3c85aacb9a5f3c9b1d28db1}
-      \strng{fullhash}{885bb1f0886f724c7cfdec6961777a56}
-      \strng{authornamehash}{f7feb41fb3c85aacb9a5f3c9b1d28db1}
-      \strng{authorfullhash}{885bb1f0886f724c7cfdec6961777a56}
-      \field{sortinit}{2}
-      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{the 10th European PVM/MPI Users' Group Conference}
-      \field{month}{9}
-      \field{title}{Design and {I}mplementation of {D}ynamic {P}rocess {M}anagement for {G}rid-enabled {MPICH}}
-      \field{usera}{C}
-      \field{usere}{Kim, Sangbum and Woo, Namyoon and Yeom, Heon Y. and Park, Taesoon and Park, Hyoungwoo}
-      \field{userf}{Kim, Sangbum and Woo, Namyoon and Yeom, Heon Y. and Park, Taesoon and Park, Hyoungwoo}
-      \field{year}{2003}
-      \field{dateera}{ce}
-      \keyw{DPMG}
-    \endentry
-    \entry{JohnD}{book}{}
+    \entry{mohamed2012acoustic}{article}{}
       \name{author}{3}{}{%
-        {{hash=fa9afa226fa9a838261e3386e20890c2}{%
-           family={Joannopoulos},
-           familyi={J\bibinitperiod},
-           given={J.\bibnamedelimi D.},
-           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-        {{hash=fe5be6ff1427708cf6dac16d929f043a}{%
-           family={Johnson},
-           familyi={J\bibinitperiod},
-           given={S.\bibnamedelimi G.},
-           giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
-        {{hash=94f42f3ff7461ae23843ac195d6c4663}{%
-           family={Winn},
-           familyi={W\bibinitperiod},
-           given={J.\bibnamedelimi N.},
-           giveni={J\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Princeton University Press}%
-      }
-      \strng{namehash}{5beddfed2a9a711d7c19a1b972ca0250}
-      \strng{fullhash}{5beddfed2a9a711d7c19a1b972ca0250}
-      \strng{authornamehash}{5beddfed2a9a711d7c19a1b972ca0250}
-      \strng{authorfullhash}{5beddfed2a9a711d7c19a1b972ca0250}
-      \field{sortinit}{3}
-      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Photonic Crystals: Molding the Flow of Light}
-      \field{usera}{M}
-      \field{usere}{Joannopoulos, J. D. and Johnson, S. G. and Winn, J. N.}
-      \field{userf}{Joannopoulos, J. D. and Johnson, S. G. and Winn, J. N.}
-      \field{year}{2008}
-      \field{dateera}{ce}
-      \keyw{JohnD}
-    \endentry
-    \entry{zhubajie}{thesis}{}
-      \name{author}{1}{}{%
-        {{hash=a0f8671e1c021f9a2ec0e714e048044e}{%
-           family={猪八戒},
-           familyi={猪\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {广寒宫大学}%
-      }
-      \list{location}{1}{%
-        {北京}%
-      }
-      \strng{namehash}{a0f8671e1c021f9a2ec0e714e048044e}
-      \strng{fullhash}{a0f8671e1c021f9a2ec0e714e048044e}
-      \strng{authornamehash}{a0f8671e1c021f9a2ec0e714e048044e}
-      \strng{authorfullhash}{a0f8671e1c021f9a2ec0e714e048044e}
-      \field{sortinit}{3}
-      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{论流体食物的持久保存}
-      \field{usera}{D}
-      \field{usere}{猪八戒}
-      \field{userf}{猪八戒}
-      \field{year}{2005}
-      \field{dateera}{ce}
-      \keyw{zhubajie}
-    \endentry
-    \entry{IEEE-1363}{book}{}
-      \name{author}{1}{}{%
-        {{hash=5bde7740f39e9feac08487ec40970e1e}{%
-           family={1363-2000},
-           familyi={1\bibinithyphendelim 2\bibinitperiod},
-           given={IEEE\bibnamedelima Std},
-           giveni={I\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {New York}%
+        {{hash=0d87a656f9bdc99e921c45f73da515b8}{%
+           family={Mohamed},
+           familyi={M\bibinitperiod},
+           given={Abdel-rahman},
+           giveni={A\bibinithyphendelim r\bibinitperiod}}}%
+        {{hash=c54ba7c146c933da55b6f2fbbbe3cf06}{%
+           family={Dahl},
+           familyi={D\bibinitperiod},
+           given={George\bibnamedelima E},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=9a8750ccdb2a4cf14d2655face1ce016}{%
+           family={Hinton},
+           familyi={H\bibinitperiod},
+           given={Geoffrey},
+           giveni={G\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {IEEE}%
       }
-      \strng{namehash}{5bde7740f39e9feac08487ec40970e1e}
-      \strng{fullhash}{5bde7740f39e9feac08487ec40970e1e}
-      \strng{authornamehash}{5bde7740f39e9feac08487ec40970e1e}
-      \strng{authorfullhash}{5bde7740f39e9feac08487ec40970e1e}
-      \field{sortinit}{3}
-      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \strng{namehash}{19f8d60f7285fdba1598adf520db12a2}
+      \strng{fullhash}{19f8d60f7285fdba1598adf520db12a2}
+      \strng{authornamehash}{19f8d60f7285fdba1598adf520db12a2}
+      \strng{authorfullhash}{19f8d60f7285fdba1598adf520db12a2}
+      \field{sortinit}{2}
+      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{IEEE Standard Specifications for Public-Key Cryptography}
-      \field{usera}{M}
-      \field{usere}{IEEE Std 1363-2000}
-      \field{userf}{IEEE Std 1363-2000}
-      \field{year}{2000}
+      \field{journaltitle}{IEEE Transactions on Audio, Speech, and Language Processing}
+      \field{number}{1}
+      \field{title}{Acoustic modeling using deep belief networks}
+      \field{usera}{J}
+      \field{usere}{Mohamed, Abdel-rahman and Dahl, George E and Hinton, Geoffrey}
+      \field{userf}{Mohamed, Abdel-rahman and Dahl, George E and Hinton, Geoffrey}
+      \field{volume}{20}
+      \field{year}{2012}
       \field{dateera}{ce}
-      \keyw{IEEE-1363}
+      \field{pages}{14\bibrangedash 22}
+      \range{pages}{9}
+      \keyw{mohamed2012acoustic}
     \endentry
-    \entry{chen2007ewi}{article}{}
+    \entry{dahl2012context}{article}{}
       \name{author}{4}{}{%
-        {{hash=742f8103481c80bc5dcf8cf53a3fff91}{%
-           family={Chen},
-           familyi={C\bibinitperiod},
-           given={H.},
-           giveni={H\bibinitperiod}}}%
-        {{hash=9ce1f63acd8fb5cd2ec0018e83beab1d}{%
-           family={Wu},
-           familyi={W\bibinitperiod},
-           given={B.\bibnamedelimi I.},
-           giveni={B\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
-        {{hash=3254f17a53363f18d15ee5f7d89c3560}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={B.},
-           giveni={B\bibinitperiod}}}%
-        {{hash=d54da81e67bdfae1e90757c84c40d392}{%
-           family={Kong},
-           familyi={K\bibinitperiod},
-           given={J.\bibnamedelimi A.},
-           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=c54ba7c146c933da55b6f2fbbbe3cf06}{%
+           family={Dahl},
+           familyi={D\bibinitperiod},
+           given={George\bibnamedelima E},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=93509a9a7ccede33feb1e702b5a8bb9f}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Dong},
+           giveni={D\bibinitperiod}}}%
+        {{hash=2f5fbdc5c3cf91f62a64663cd72397b3}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod}}}%
+        {{hash=f4856677f688ac94b2cb06f12937080f}{%
+           family={Acero},
+           familyi={A\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {APS}%
+        {IEEE}%
       }
-      \strng{namehash}{5bd9313cfc6de360b5ccf3d334807a5a}
-      \strng{fullhash}{c37e3978e051ec8bd93fbe55e562d0ee}
-      \strng{authornamehash}{5bd9313cfc6de360b5ccf3d334807a5a}
-      \strng{authorfullhash}{c37e3978e051ec8bd93fbe55e562d0ee}
-      \field{sortinit}{5}
-      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
+      \strng{namehash}{888e68e790b9a6800fb1d0d540e4f4cc}
+      \strng{fullhash}{6112486933043ce5935eb06c8fc13d0f}
+      \strng{authornamehash}{888e68e790b9a6800fb1d0d540e4f4cc}
+      \strng{authorfullhash}{6112486933043ce5935eb06c8fc13d0f}
+      \field{sortinit}{4}
+      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Physical Review Letters}
-      \field{number}{6}
-      \field{title}{Electromagnetic Wave Interactions with a Metamaterial Cloak}
+      \field{journaltitle}{IEEE Transactions on audio, speech, and language processing}
+      \field{number}{1}
+      \field{title}{Context-dependent pre-trained deep neural networks for large-vocabulary speech recognition}
       \field{usera}{J}
-      \field{usere}{Chen, H. and Wu, B. I. and Zhang, B. and Kong, J. A.}
-      \field{userf}{Chen, H. and Wu, B. I. and Zhang, B. and Kong, J. A.}
-      \field{volume}{99}
+      \field{usere}{Dahl, George E and Yu, Dong and Deng, Li and Acero, Alex}
+      \field{userf}{Dahl, George E and Yu, Dong and Deng, Li and Acero, Alex}
+      \field{volume}{20}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{pages}{30\bibrangedash 42}
+      \range{pages}{13}
+      \keyw{dahl2012context}
+    \endentry
+    \entry{bengio2007greedy}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=f982a903aea0f11eb0fd5f208d25810e}{%
+           family={Lamblin},
+           familyi={L\bibinitperiod},
+           given={Pascal},
+           giveni={P\bibinitperiod}}}%
+        {{hash=ac84b90dfbbbb5a5b738c2c69684b368}{%
+           family={Popovici},
+           familyi={P\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=42a970b0a0f1ed24b23064370cc9392f}{%
+           family={Larochelle},
+           familyi={L\bibinitperiod},
+           given={Hugo},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{636822745f106b6a3eef556cc0295d80}
+      \strng{fullhash}{f230079cf128f05c5e8428e34b4b2e6a}
+      \strng{authornamehash}{636822745f106b6a3eef556cc0295d80}
+      \strng{authorfullhash}{f230079cf128f05c5e8428e34b4b2e6a}
+      \field{sortinit}{6}
+      \field{sortinithash}{02bbed3ed82f61ae046619460488516d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in neural information processing systems}
+      \field{title}{Greedy layer-wise training of deep networks}
+      \field{usera}{C}
+      \field{usere}{Bengio, Yoshua and Lamblin, Pascal and Popovici, Dan and Larochelle, Hugo}
+      \field{userf}{Bengio, Yoshua and Lamblin, Pascal and Popovici, Dan and Larochelle, Hugo}
       \field{year}{2007}
       \field{dateera}{ce}
-      \field{pages}{63903}
-      \range{pages}{1}
-      \keyw{chen2007ewi}
+      \field{pages}{153\bibrangedash 160}
+      \range{pages}{8}
+      \keyw{bengio2007greedy}
     \endentry
-    \entry{kocher99}{inproceedings}{}
+    \entry{mohamed2010investigation}{inproceedings}{}
       \name{author}{3}{}{%
-        {{hash=6f15ea65e88e08cdd58c202a4ab1201d}{%
-           family={Kocher},
-           familyi={K\bibinitperiod},
-           given={C.},
-           giveni={C\bibinitperiod}}}%
-        {{hash=0e3eb0aabb9956de097b43bfb5206c4b}{%
-           family={Jaffe},
-           familyi={J\bibinitperiod},
-           given={J.},
-           giveni={J\bibinitperiod}}}%
-        {{hash=a07883e1c3baf26ef265e925ab8653a5}{%
-           family={Jun},
-           familyi={J\bibinitperiod},
-           given={B.},
-           giveni={B\bibinitperiod}}}%
+        {{hash=0d87a656f9bdc99e921c45f73da515b8}{%
+           family={Mohamed},
+           familyi={M\bibinitperiod},
+           given={Abdel-rahman},
+           giveni={A\bibinithyphendelim r\bibinitperiod}}}%
+        {{hash=93509a9a7ccede33feb1e702b5a8bb9f}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Dong},
+           giveni={D\bibinitperiod}}}%
+        {{hash=2f5fbdc5c3cf91f62a64663cd72397b3}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod}}}%
       }
-      \name{bookauthor}{1}{}{%
-        {{hash=ac3b1641dc986a28e40ae6b0ac6f53c7}{%
-           family={Wiener},
-           familyi={W\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-      }
-      \name{editor}{1}{}{%
-        {{hash=ac3b1641dc986a28e40ae6b0ac6f53c7}{%
-           family={Wiener},
-           familyi={W\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer-Verlag}%
-      }
-      \strng{namehash}{eed5167643af5f05e06792562888ee12}
-      \strng{fullhash}{eed5167643af5f05e06792562888ee12}
-      \strng{authornamehash}{eed5167643af5f05e06792562888ee12}
-      \strng{authorfullhash}{eed5167643af5f05e06792562888ee12}
-      \strng{bookauthornamehash}{ac3b1641dc986a28e40ae6b0ac6f53c7}
-      \strng{bookauthorfullhash}{ac3b1641dc986a28e40ae6b0ac6f53c7}
-      \strng{editornamehash}{ac3b1641dc986a28e40ae6b0ac6f53c7}
-      \strng{editorfullhash}{ac3b1641dc986a28e40ae6b0ac6f53c7}
-      \field{sortinit}{6}
-      \field{sortinithash}{02bbed3ed82f61ae046619460488516d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Advances in Cryptology ({CRYPTO}~'99)}
-      \field{month}{9}
-      \field{series}{Lecture Notes in Computer Science}
-      \field{title}{Differential Power Analysis}
-      \field{usera}{C}
-      \field{usere}{C. Kocher and J. Jaffe and B. Jun}
-      \field{userf}{C. Kocher and J. Jaffe and B. Jun}
-      \field{volume}{1666}
-      \field{year}{1999}
-      \field{dateera}{ce}
-      \field{pages}{388\bibrangedash 397}
-      \range{pages}{10}
-      \keyw{kocher99}
-    \endentry
-    \entry{cnproceed}{inproceedings}{}
-      \name{author}{5}{}{%
-        {{hash=5c1d920c2f2030fa01233f446674ecc3}{%
-           family={王重阳},
-           familyi={王\bibinitperiod}}}%
-        {{hash=66947c11a37e621750e789f25bdcd581}{%
-           family={黄药师},
-           familyi={黄\bibinitperiod}}}%
-        {{hash=77167b0a58af42d8ff396e506ba2f962}{%
-           family={欧阳峰},
-           familyi={欧\bibinitperiod}}}%
-        {{hash=81d7b79dfcb2b5fc6b57e0c51dd964f7}{%
-           family={洪七公},
-           familyi={洪\bibinitperiod}}}%
-        {{hash=fcb8bbbae41ccb07250331e7c0576ad4}{%
-           family={段皇帝},
-           familyi={段\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {西安, 中国}%
-      }
-      \list{publisher}{1}{%
-        {中国古籍出版社}%
-      }
-      \strng{namehash}{35bb91ff606e9f3f95493608483409c3}
-      \strng{fullhash}{f805963ba6e890904fa77805c4227ad8}
-      \strng{authornamehash}{35bb91ff606e9f3f95493608483409c3}
-      \strng{authorfullhash}{f805963ba6e890904fa77805c4227ad8}
-      \field{sortinit}{6}
-      \field{sortinithash}{02bbed3ed82f61ae046619460488516d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{第~$N$~次华山论剑}
-      \field{month}{9}
-      \field{title}{武林高手论文集}
-      \field{usera}{C}
-      \field{usere}{王重阳 and 黄药师 and 欧阳峰 and 洪七公 and 段皇帝}
-      \field{userf}{王重阳 and 黄药师 and 欧阳峰 and 洪七公 and 段皇帝}
-      \field{year}{2006}
-      \field{dateera}{ce}
-      \keyw{cnproceed}
-    \endentry
-    \entry{metamori2004}{thesis}{}
-      \name{author}{1}{}{%
-        {{hash=6105585c555fccb87d78d94be4842e83}{%
-           family={Jeyakumar},
-           familyi={J\bibinitperiod},
-           given={Ashwin\bibnamedelima Raju},
-           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {Virgina Tech}%
-      }
-      \list{location}{1}{%
-        {Blacksburg}%
-      }
-      \strng{namehash}{6105585c555fccb87d78d94be4842e83}
-      \strng{fullhash}{6105585c555fccb87d78d94be4842e83}
-      \strng{authornamehash}{6105585c555fccb87d78d94be4842e83}
-      \strng{authorfullhash}{6105585c555fccb87d78d94be4842e83}
+      \strng{namehash}{970d2aa21668571245c14287fc294f7e}
+      \strng{fullhash}{970d2aa21668571245c14287fc294f7e}
+      \strng{authornamehash}{970d2aa21668571245c14287fc294f7e}
+      \strng{authorfullhash}{970d2aa21668571245c14287fc294f7e}
       \field{sortinit}{7}
       \field{sortinithash}{6ac7fe70cdec8cba8f65694411ce2532}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{month}{7}
-      \field{title}{Metamori: A library for Incremental File Checkpointing}
-      \field{usera}{D}
-      \field{usere}{Ashwin Raju Jeyakumar}
-      \field{userf}{Ashwin Raju Jeyakumar}
-      \field{year}{2004}
+      \field{booktitle}{Eleventh Annual Conference of the International Speech Communication Association}
+      \field{title}{Investigation of full-sequence training of deep belief networks for speech recognition}
+      \field{usera}{C}
+      \field{usere}{Mohamed, Abdel-rahman and Yu, Dong and Deng, Li}
+      \field{userf}{Mohamed, Abdel-rahman and Yu, Dong and Deng, Li}
+      \field{year}{2010}
       \field{dateera}{ce}
-      \keyw{metamori2004}
+      \keyw{mohamed2010investigation}
     \endentry
-    \entry{shaheshang}{thesis}{}
-      \name{author}{1}{}{%
-        {{hash=123ccc47ad74b8f4e6906a4f28ee0d0e}{%
-           family={沙和尚},
-           familyi={沙\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {清华大学}%
-      }
-      \list{location}{1}{%
-        {北京}%
-      }
-      \strng{namehash}{123ccc47ad74b8f4e6906a4f28ee0d0e}
-      \strng{fullhash}{123ccc47ad74b8f4e6906a4f28ee0d0e}
-      \strng{authornamehash}{123ccc47ad74b8f4e6906a4f28ee0d0e}
-      \strng{authorfullhash}{123ccc47ad74b8f4e6906a4f28ee0d0e}
-      \field{sortinit}{8}
-      \field{sortinithash}{2f1b0e69e7617f99664f1cd00bb9603c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{论流沙河的综合治理}
-      \field{usera}{D}
-      \field{usere}{沙和尚}
-      \field{userf}{沙和尚}
-      \field{year}{2005}
-      \field{dateera}{ce}
-      \keyw{shaheshang}
-    \endentry
-    \entry{FistSystem01}{thesis}{}
-      \name{author}{1}{}{%
-        {{hash=6c79b4d2fa53538347e4a5f171a1cd36}{%
-           family={Zadok},
-           familyi={Z\bibinitperiod},
-           given={Erez},
-           giveni={E\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {Computer Science Department, Columbia University}%
-      }
-      \list{location}{1}{%
-        {USA}%
-      }
-      \strng{namehash}{6c79b4d2fa53538347e4a5f171a1cd36}
-      \strng{fullhash}{6c79b4d2fa53538347e4a5f171a1cd36}
-      \strng{authornamehash}{6c79b4d2fa53538347e4a5f171a1cd36}
-      \strng{authorfullhash}{6c79b4d2fa53538347e4a5f171a1cd36}
-      \field{sortinit}{8}
-      \field{sortinithash}{2f1b0e69e7617f99664f1cd00bb9603c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{5}
-      \field{title}{FiST: A System for Stackable File System Code Generation}
-      \field{usera}{D}
-      \field{usere}{Erez Zadok}
-      \field{userf}{Erez Zadok}
-      \field{year}{2001}
-      \field{dateera}{ce}
-      \keyw{FistSystem01}
-    \endentry
-    \entry{bai2008}{thesis}{}
-      \name{author}{1}{}{%
-        {{hash=0e68fa9b72078f5bfa16728621030a03}{%
-           family={白云芬},
-           familyi={白\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {上海交通大学}%
-      }
-      \list{location}{1}{%
-        {上海}%
-      }
-      \strng{namehash}{0e68fa9b72078f5bfa16728621030a03}
-      \strng{fullhash}{0e68fa9b72078f5bfa16728621030a03}
-      \strng{authornamehash}{0e68fa9b72078f5bfa16728621030a03}
-      \strng{authorfullhash}{0e68fa9b72078f5bfa16728621030a03}
-      \field{sortinit}{8}
-      \field{sortinithash}{2f1b0e69e7617f99664f1cd00bb9603c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{信用风险传染模型和信用衍生品的定价}
-      \field{usera}{D}
-      \field{usere}{白云芬}
-      \field{userf}{白云芬}
-      \field{year}{2008}
-      \field{dateera}{ce}
-      \keyw{bai2008}
-    \endentry
-    \entry{NPB2}{report}{}
-      \name{author}{6}{}{%
-        {{hash=529e52f9a7bfb1480c4a9184449d2a93}{%
-           family={Woo},
-           familyi={W\bibinitperiod},
-           given={Alex},
+    \entry{vesely2013sequence}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=c95800f876d93ad50095562decfc8684}{%
+           family={Veselỳ},
+           familyi={V\bibinitperiod},
+           given={Karel},
+           giveni={K\bibinitperiod}}}%
+        {{hash=7317e829771fcdb6bffb1ce8c3b6c02f}{%
+           family={Ghoshal},
+           familyi={G\bibinitperiod},
+           given={Arnab},
            giveni={A\bibinitperiod}}}%
-        {{hash=07539ff50924d8011bbdd60c37daff3f}{%
-           family={Bailey},
+        {{hash=338a19c162ee38a70d24f99ffb9a9c29}{%
+           family={Burget},
            familyi={B\bibinitperiod},
-           given={David},
+           given={Lukás},
+           giveni={L\bibinitperiod}}}%
+        {{hash=e37bd3eba929f71a8a0351899f3870d5}{%
+           family={Povey},
+           familyi={P\bibinitperiod},
+           given={Daniel},
            giveni={D\bibinitperiod}}}%
-        {{hash=d4303dfc1a98308752efcab8f6bc9c09}{%
-           family={Yarrow},
+      }
+      \strng{namehash}{005e2191ff12f7d77e44d2c50e67bdac}
+      \strng{fullhash}{4ba64014a51ed681d2fd5200b4560ab5}
+      \strng{authornamehash}{005e2191ff12f7d77e44d2c50e67bdac}
+      \strng{authorfullhash}{4ba64014a51ed681d2fd5200b4560ab5}
+      \field{sortinit}{8}
+      \field{sortinithash}{2f1b0e69e7617f99664f1cd00bb9603c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Interspeech}
+      \field{title}{Sequence-discriminative training of deep neural networks.}
+      \field{usera}{C}
+      \field{usere}{Veselỳ, Karel and Ghoshal, Arnab and Burget, Lukás and Povey, Daniel}
+      \field{userf}{Veselỳ, Karel and Ghoshal, Arnab and Burget, Lukás and Povey, Daniel}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{pages}{2345\bibrangedash 2349}
+      \range{pages}{5}
+      \keyw{vesely2013sequence}
+    \endentry
+    \entry{yu2011improved}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=93509a9a7ccede33feb1e702b5a8bb9f}{%
+           family={Yu},
            familyi={Y\bibinitperiod},
-           given={Maurice},
-           giveni={M\bibinitperiod}}}%
-        {{hash=34d298deec4bef8bc2b506bb4eab035c}{%
-           family={Wijngaart},
-           familyi={W\bibinitperiod},
-           given={Wijngaart},
-           giveni={W\bibinitperiod}}}%
-        {{hash=0074fd9f9da537e51b88596b5f635943}{%
-           family={Harris},
-           familyi={H\bibinitperiod},
-           given={Tim},
-           giveni={T\bibinitperiod}}}%
-        {{hash=5555d1cae21fad4a5a7111aecf1bf7c9}{%
-           family={Saphir},
+           given={Dong},
+           giveni={D\bibinitperiod}}}%
+        {{hash=47940acafd5c8d4c52b80690308ae814}{%
+           family={Seltzer},
            familyi={S\bibinitperiod},
-           given={William},
-           giveni={W\bibinitperiod}}}%
+           given={Michael\bibnamedelima L},
+           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
       }
-      \list{institution}{1}{%
-        {The Pennsylvania State University CiteSeer Archives}%
-      }
-      \strng{namehash}{d612d1522527164cdbeb9e7b9b91cb6c}
-      \strng{fullhash}{964f274815d873ed0f7795fe5f0adab1}
-      \strng{authornamehash}{d612d1522527164cdbeb9e7b9b91cb6c}
-      \strng{authorfullhash}{964f274815d873ed0f7795fe5f0adab1}
-      \field{sortinit}{1}
-      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \strng{namehash}{29ee6157204307d2e81f4dd02f2d2b7b}
+      \strng{fullhash}{29ee6157204307d2e81f4dd02f2d2b7b}
+      \strng{authornamehash}{29ee6157204307d2e81f4dd02f2d2b7b}
+      \strng{authorfullhash}{29ee6157204307d2e81f4dd02f2d2b7b}
+      \field{sortinit}{9}
+      \field{sortinithash}{2999ebab86052e6d71b434385f8b4ed2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{month}{12}
-      \field{title}{The {NAS} Parallel Benchmarks 2.0}
-      \field{usera}{R}
-      \field{usere}{Alex Woo and David Bailey and Maurice Yarrow and Wijngaart Wijngaart and Tim Harris and William Saphir}
-      \field{userf}{Alex Woo and David Bailey and Maurice Yarrow and Wijngaart Wijngaart and Tim Harris and William Saphir}
-      \field{year}{1995}
+      \field{booktitle}{Twelfth Annual Conference of the International Speech Communication Association}
+      \field{title}{Improved bottleneck features using pretrained deep neural networks}
+      \field{usera}{C}
+      \field{usere}{Yu, Dong and Seltzer, Michael L}
+      \field{userf}{Yu, Dong and Seltzer, Michael L}
+      \field{year}{2011}
       \field{dateera}{ce}
-      \verb{url}
-      \verb http://www.nasa.org/
-      \endverb
-      \keyw{NPB2}
+      \keyw{yu2011improved}
     \endentry
-    \entry{xiaoyu2001}{article}{}
-      \name{author}{1}{}{%
-        {{hash=cc33f4f9702ebe9e9ae90ce8b26e8109}{%
-           family={萧钰},
-           familyi={萧\bibinitperiod}}}%
-      }
-      \strng{namehash}{cc33f4f9702ebe9e9ae90ce8b26e8109}
-      \strng{fullhash}{cc33f4f9702ebe9e9ae90ce8b26e8109}
-      \strng{authornamehash}{cc33f4f9702ebe9e9ae90ce8b26e8109}
-      \strng{authorfullhash}{cc33f4f9702ebe9e9ae90ce8b26e8109}
-      \field{sortinit}{1}
-      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{出版业信息化迈人快车道}
-      \field{usera}{J}
-      \field{usere}{萧钰}
-      \field{userf}{萧钰}
-      \field{year}{2001}
-      \field{dateera}{ce}
-      \verb{url}
-      \verb http://www.creader.com/news/20011219/200112190019.html
-      \endverb
-      \keyw{xiaoyu2001}
-    \endentry
-    \entry{CHRISTINE1998}{article}{}
-      \name{author}{1}{}{%
-        {{hash=494bf82c50994ec2bd31db64927f56a5}{%
-           family={Christine},
-           familyi={C\bibinitperiod},
-           given={Mlot},
+    \entry{kawabata1996back}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=e493db5cc4e3e970f8d54ec5a182480e}{%
+           family={Kawabata},
+           familyi={K\bibinitperiod},
+           given={Takeshi},
+           giveni={T\bibinitperiod}}}%
+        {{hash=a12c6c9609212032c45c1b4c3dbae742}{%
+           family={Tamoto},
+           familyi={T\bibinitperiod},
+           given={Masafumi},
            giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{494bf82c50994ec2bd31db64927f56a5}
-      \strng{fullhash}{494bf82c50994ec2bd31db64927f56a5}
-      \strng{authornamehash}{494bf82c50994ec2bd31db64927f56a5}
-      \strng{authorfullhash}{494bf82c50994ec2bd31db64927f56a5}
-      \field{sortinit}{1}
-      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Science}
-      \field{title}{Plant physiology: plant biology in the Genome Era}
-      \field{usera}{J}
-      \field{usere}{Christine, Mlot}
-      \field{userf}{Christine, Mlot}
-      \field{volume}{281}
-      \field{year}{1998}
-      \field{dateera}{ce}
-      \field{pages}{331\bibrangedash 332}
-      \range{pages}{2}
-      \verb{url}
-      \verb http://www.sciencemag.org/cgi/collection/anatmorp
-      \endverb
-      \keyw{CHRISTINE1998}
-    \endentry
-    \entry{RManual}{book}{}
-      \name{author}{1}{}{%
-        {{hash=a902f7a1275f47f57554b7ea75ccd0bc}{%
-           family={{R Core Team}},
-           familyi={R\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Vienna, Austria}%
       }
       \list{organization}{1}{%
-        {R Foundation for Statistical Computing}%
+        {IEEE}%
       }
-      \strng{namehash}{a902f7a1275f47f57554b7ea75ccd0bc}
-      \strng{fullhash}{a902f7a1275f47f57554b7ea75ccd0bc}
-      \strng{authornamehash}{a902f7a1275f47f57554b7ea75ccd0bc}
-      \strng{authorfullhash}{a902f7a1275f47f57554b7ea75ccd0bc}
+      \strng{namehash}{747583720bdc1544a7e7d9ee5780128a}
+      \strng{fullhash}{747583720bdc1544a7e7d9ee5780128a}
+      \strng{authornamehash}{747583720bdc1544a7e7d9ee5780128a}
+      \strng{authorfullhash}{747583720bdc1544a7e7d9ee5780128a}
       \field{sortinit}{1}
       \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{{ISBN} 3-900051-07-0}
-      \field{title}{R: A Language and Environment for Statistical Computing}
-      \field{usera}{M}
-      \field{usere}{{R Core Team}}
-      \field{userf}{{R Core Team}}
+      \field{booktitle}{Acoustics, Speech, and Signal Processing, 1996. ICASSP-96. Conference Proceedings., 1996 IEEE International Conference on}
+      \field{title}{Back-off method for N-gram smoothing based on binomial posteriori distribution}
+      \field{usera}{C}
+      \field{usere}{Kawabata, Takeshi and Tamoto, Masafumi}
+      \field{userf}{Kawabata, Takeshi and Tamoto, Masafumi}
+      \field{volume}{1}
+      \field{year}{1996}
+      \field{dateera}{ce}
+      \field{pages}{192\bibrangedash 195}
+      \range{pages}{4}
+      \keyw{kawabata1996back}
+    \endentry
+    \entry{moore2009improved}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=7fbd8fd21a58e273d3386d81bca83476}{%
+           family={Moore},
+           familyi={M\bibinitperiod},
+           given={Robert\bibnamedelima C},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=1acdbbee5b8dd48b80b3f9f6b8065a11}{%
+           family={Quirk},
+           familyi={Q\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{47c9572f16027bcbe6bfb2ec90c3dcb0}
+      \strng{fullhash}{47c9572f16027bcbe6bfb2ec90c3dcb0}
+      \strng{authornamehash}{47c9572f16027bcbe6bfb2ec90c3dcb0}
+      \strng{authorfullhash}{47c9572f16027bcbe6bfb2ec90c3dcb0}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the ACL-IJCNLP 2009 Conference Short Papers}
+      \field{title}{Improved smoothing for N-gram language models based on ordinary counts}
+      \field{usera}{C}
+      \field{usere}{Moore, Robert C and Quirk, Chris}
+      \field{userf}{Moore, Robert C and Quirk, Chris}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \field{pages}{349\bibrangedash 352}
+      \range{pages}{4}
+      \keyw{moore2009improved}
+    \endentry
+    \entry{pickhardt2014generalized}{article}{}
+      \name{author}{6}{}{%
+        {{hash=dc85330d1565ef95ba5a108f80bd096e}{%
+           family={Pickhardt},
+           familyi={P\bibinitperiod},
+           given={Rene},
+           giveni={R\bibinitperiod}}}%
+        {{hash=426c919f7e6e9240f938c8b5ebdfa69e}{%
+           family={Gottron},
+           familyi={G\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=1b075fc726fae658f8253b0e05ac877e}{%
+           family={Körner},
+           familyi={K\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f65bec5f2aa00449b24ec9243aa9d612}{%
+           family={Wagner},
+           familyi={W\bibinitperiod},
+           given={Paul\bibnamedelima Georg},
+           giveni={P\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=4a3d2cbeaece587f21139289a0acd2d8}{%
+           family={Speicher},
+           familyi={S\bibinitperiod},
+           given={Till},
+           giveni={T\bibinitperiod}}}%
+        {{hash=3489f3873d85937d1977e3a21e5e76a7}{%
+           family={Staab},
+           familyi={S\bibinitperiod},
+           given={Steffen},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{95fde4d4a8e3f2315d1b467a21c63476}
+      \strng{fullhash}{6976794d1f9f668db13b1a75a5e22169}
+      \strng{authornamehash}{95fde4d4a8e3f2315d1b467a21c63476}
+      \strng{authorfullhash}{6976794d1f9f668db13b1a75a5e22169}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1404.3377}
+      \field{title}{A generalized language model as the combination of skipped n-grams and modified kneser-ney smoothing}
+      \field{usera}{J}
+      \field{usere}{Pickhardt, Rene and Gottron, Thomas and Körner, Martin and Wagner, Paul Georg and Speicher, Till and Staab, Steffen}
+      \field{userf}{Pickhardt, Rene and Gottron, Thomas and Körner, Martin and Wagner, Paul Georg and Speicher, Till and Staab, Steffen}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \keyw{pickhardt2014generalized}
+    \endentry
+    \entry{kuhn1990cache}{article}{}
+      \name{author}{2}{}{%
+        {{hash=5874c3ac25a57d1817298f76e9f8e880}{%
+           family={Kuhn},
+           familyi={K\bibinitperiod},
+           given={Roland},
+           giveni={R\bibinitperiod}}}%
+        {{hash=540a9ffff590bb5a89f8fa8db96232fd}{%
+           family={De\bibnamedelima Mori},
+           familyi={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Renato},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{264b85bb103d67925c5790ec983b0f0f}
+      \strng{fullhash}{264b85bb103d67925c5790ec983b0f0f}
+      \strng{authornamehash}{264b85bb103d67925c5790ec983b0f0f}
+      \strng{authorfullhash}{264b85bb103d67925c5790ec983b0f0f}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on pattern analysis and machine intelligence}
+      \field{number}{6}
+      \field{title}{A cache-based natural language model for speech recognition}
+      \field{usera}{J}
+      \field{usere}{Kuhn, Roland and De Mori, Renato}
+      \field{userf}{Kuhn, Roland and De Mori, Renato}
+      \field{volume}{12}
+      \field{year}{1990}
+      \field{dateera}{ce}
+      \field{pages}{570\bibrangedash 583}
+      \range{pages}{14}
+      \keyw{kuhn1990cache}
+    \endentry
+    \entry{brown1992class}{article}{}
+      \name{author}{5}{}{%
+        {{hash=791b09364bb9fecdff75c8cdff270f6e}{%
+           family={Brown},
+           familyi={B\bibinitperiod},
+           given={Peter\bibnamedelima F},
+           giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=2c9f906745ac8410d8eaaca2f2a105f1}{%
+           family={Desouza},
+           familyi={D\bibinitperiod},
+           given={Peter\bibnamedelima V},
+           giveni={P\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=248dcd4fa756b06b971e9fa5dbbe6aa8}{%
+           family={Mercer},
+           familyi={M\bibinitperiod},
+           given={Robert\bibnamedelima L},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=baec0fc6cc2a0fce5bf82e086a02b5d3}{%
+           family={Pietra},
+           familyi={P\bibinitperiod},
+           given={Vincent\bibnamedelimb J\bibnamedelima Della},
+           giveni={V\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=4bbd34c309fd34bb5671243c0f7351da}{%
+           family={Lai},
+           familyi={L\bibinitperiod},
+           given={Jenifer\bibnamedelima C},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{ec49f988a5bedadf4c14bec7454e6a69}
+      \strng{fullhash}{14c847a1bb15c36f15e6a5c4bb4dd853}
+      \strng{authornamehash}{ec49f988a5bedadf4c14bec7454e6a69}
+      \strng{authorfullhash}{14c847a1bb15c36f15e6a5c4bb4dd853}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computational linguistics}
+      \field{number}{4}
+      \field{title}{Class-based n-gram models of natural language}
+      \field{usera}{J}
+      \field{usere}{Brown, Peter F and Desouza, Peter V and Mercer, Robert L and Pietra, Vincent J Della and Lai, Jenifer C}
+      \field{userf}{Brown, Peter F and Desouza, Peter V and Mercer, Robert L and Pietra, Vincent J Della and Lai, Jenifer C}
+      \field{volume}{18}
+      \field{year}{1992}
+      \field{dateera}{ce}
+      \field{pages}{467\bibrangedash 479}
+      \range{pages}{13}
+      \keyw{brown1992class}
+    \endentry
+    \entry{gildea1999topic}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=05416ab17043c0bfe73098747bd94465}{%
+           family={Gildea},
+           familyi={G\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=ee42cfed2ff3020233d2de97c356eaee}{%
+           family={Hofmann},
+           familyi={H\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{df2c9b2cba388585c3fd08cbe2c3ec8a}
+      \strng{fullhash}{df2c9b2cba388585c3fd08cbe2c3ec8a}
+      \strng{authornamehash}{df2c9b2cba388585c3fd08cbe2c3ec8a}
+      \strng{authorfullhash}{df2c9b2cba388585c3fd08cbe2c3ec8a}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Sixth European Conference on Speech Communication and Technology}
+      \field{title}{Topic-based language models using EM}
+      \field{usera}{C}
+      \field{usere}{Gildea, Daniel and Hofmann, Thomas}
+      \field{userf}{Gildea, Daniel and Hofmann, Thomas}
+      \field{year}{1999}
+      \field{dateera}{ce}
+      \keyw{gildea1999topic}
+    \endentry
+    \entry{gales2008application}{article}{}
+      \name{author}{2}{}{%
+        {{hash=54986a9bb01d4bd90e3a54428665980f}{%
+           family={Gales},
+           familyi={G\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4e4fb887c4c9f76e33e3eb48bbe7a7d6}{%
+           family={Young},
+           familyi={Y\bibinitperiod},
+           given={Steve},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Now Publishers Inc.}%
+      }
+      \strng{namehash}{2b3e62230aa81b42c5b44df1b817a709}
+      \strng{fullhash}{2b3e62230aa81b42c5b44df1b817a709}
+      \strng{authornamehash}{2b3e62230aa81b42c5b44df1b817a709}
+      \strng{authorfullhash}{2b3e62230aa81b42c5b44df1b817a709}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Foundations and trends in signal processing}
+      \field{number}{3}
+      \field{title}{The application of hidden Markov models in speech recognition}
+      \field{usera}{J}
+      \field{usere}{Gales, Mark and Young, Steve}
+      \field{userf}{Gales, Mark and Young, Steve}
+      \field{volume}{1}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{pages}{195\bibrangedash 304}
+      \range{pages}{110}
+      \keyw{gales2008application}
+    \endentry
+    \entry{deng2013recent}{inproceedings}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=2f5fbdc5c3cf91f62a64663cd72397b3}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod}}}%
+        {{hash=d270aa10662fa7c8d47b9f38aaf06bc9}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Jinyu},
+           giveni={J\bibinitperiod}}}%
+        {{hash=42e6cbeaadf281b1c3e32f69c41b948f}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Jui-Ting},
+           giveni={J\bibinithyphendelim T\bibinitperiod}}}%
+        {{hash=2073078316d874b3448a318a62962715}{%
+           family={Yao},
+           familyi={Y\bibinitperiod},
+           given={Kaisheng},
+           giveni={K\bibinitperiod}}}%
+        {{hash=93509a9a7ccede33feb1e702b5a8bb9f}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Dong},
+           giveni={D\bibinitperiod}}}%
+        {{hash=ef03c6cf9b4db1e1c72b2202a2b4ab62}{%
+           family={Seide},
+           familyi={S\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+        {{hash=10e51ff4c639a45550f186b09ee08781}{%
+           family={Seltzer},
+           familyi={S\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+        {{hash=cfb1a34f05df33abbac5edaa416f2b48}{%
+           family={Zweig},
+           familyi={Z\bibinitperiod},
+           given={Geoffrey},
+           giveni={G\bibinitperiod}}}%
+        {{hash=a2d92e419c3b04b620f2b0302581e68c}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Xiaodong},
+           giveni={X\bibinitperiod}}}%
+        {{hash=1ef6b634019b004e49fe48a5471be37d}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Julia},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{02e16cf2ed58ad6a176b012ac3ff1e95}
+      \strng{fullhash}{13ab0ada97f9521c4f4cf7edd626b508}
+      \strng{authornamehash}{02e16cf2ed58ad6a176b012ac3ff1e95}
+      \strng{authorfullhash}{13ab0ada97f9521c4f4cf7edd626b508}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2013}
+      \field{title}{Recent advances in deep learning for speech research at Microsoft}
+      \field{usera}{C}
+      \field{usere}{Deng, Li and Li, Jinyu and Huang, Jui-Ting and Yao, Kaisheng and Yu, Dong and Seide, Frank and Seltzer, Mike and Zweig, Geoffrey and He, Xiaodong and Williams, Julia and others}
+      \field{userf}{Deng, Li and Li, Jinyu and Huang, Jui-Ting and Yao, Kaisheng and Yu, Dong and Seide, Frank and Seltzer, Mike and Zweig, Geoffrey and He, Xiaodong and Williams, Julia and others}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{pages}{8604\bibrangedash 8608}
+      \range{pages}{5}
+      \keyw{deng2013recent}
+    \endentry
+    \entry{hinton2012deep}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=9a8750ccdb2a4cf14d2655face1ce016}{%
+           family={Hinton},
+           familyi={H\bibinitperiod},
+           given={Geoffrey},
+           giveni={G\bibinitperiod}}}%
+        {{hash=2f5fbdc5c3cf91f62a64663cd72397b3}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod}}}%
+        {{hash=93509a9a7ccede33feb1e702b5a8bb9f}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Dong},
+           giveni={D\bibinitperiod}}}%
+        {{hash=c54ba7c146c933da55b6f2fbbbe3cf06}{%
+           family={Dahl},
+           familyi={D\bibinitperiod},
+           given={George\bibnamedelima E},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=0d87a656f9bdc99e921c45f73da515b8}{%
+           family={Mohamed},
+           familyi={M\bibinitperiod},
+           given={Abdel-rahman},
+           giveni={A\bibinithyphendelim r\bibinitperiod}}}%
+        {{hash=5a9f30e0c0441d2aea255916ff375e8c}{%
+           family={Jaitly},
+           familyi={J\bibinitperiod},
+           given={Navdeep},
+           giveni={N\bibinitperiod}}}%
+        {{hash=99e8963f52f6bfb1af553a6a8823718a}{%
+           family={Senior},
+           familyi={S\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8051922e7bd286f884bfbd1023ef62f5}{%
+           family={Vanhoucke},
+           familyi={V\bibinitperiod},
+           given={Vincent},
+           giveni={V\bibinitperiod}}}%
+        {{hash=842040ccc784c0e00e9b177a7271883a}{%
+           family={Nguyen},
+           familyi={N\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+        {{hash=f8e38c199ec4b920a0bda0a5e7064d03}{%
+           family={Sainath},
+           familyi={S\bibinitperiod},
+           given={Tara\bibnamedelima N},
+           giveni={T\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{4493e6a628147468c6762d54b3af83ab}
+      \strng{fullhash}{4e5248eac7cfdc917dd8ecbb41094b82}
+      \strng{authornamehash}{4493e6a628147468c6762d54b3af83ab}
+      \strng{authorfullhash}{4e5248eac7cfdc917dd8ecbb41094b82}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Signal Processing Magazine, IEEE}
+      \field{number}{6}
+      \field{title}{Deep neural networks for acoustic modeling in speech recognition: The shared views of four research groups}
+      \field{usera}{J}
+      \field{usere}{Hinton, Geoffrey and Deng, Li and Yu, Dong and Dahl, George E and Mohamed, Abdel-rahman and Jaitly, Navdeep and Senior, Andrew and Vanhoucke, Vincent and Nguyen, Patrick and Sainath, Tara N and others}
+      \field{userf}{Hinton, Geoffrey and Deng, Li and Yu, Dong and Dahl, George E and Mohamed, Abdel-rahman and Jaitly, Navdeep and Senior, Andrew and Vanhoucke, Vincent and Nguyen, Patrick and Sainath, Tara N and others}
+      \field{volume}{29}
       \field{year}{2012}
       \field{dateera}{ce}
-      \verb{url}
-      \verb http://www.R-project.org/
-      \endverb
-      \keyw{RManual,{ISBN} 3-900051-07-0}
+      \field{pages}{82\bibrangedash 97}
+      \range{pages}{16}
+      \keyw{hinton2012deep}
+    \endentry
+    \entry{graves2014towards}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=dfca94b0427da7f9088af596e23b46c0}{%
+           family={Graves},
+           familyi={G\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5a9f30e0c0441d2aea255916ff375e8c}{%
+           family={Jaitly},
+           familyi={J\bibinitperiod},
+           given={Navdeep},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{71244c2b5e12c988a55d54e3f9663904}
+      \strng{fullhash}{71244c2b5e12c988a55d54e3f9663904}
+      \strng{authornamehash}{71244c2b5e12c988a55d54e3f9663904}
+      \strng{authorfullhash}{71244c2b5e12c988a55d54e3f9663904}
+      \field{sortinit}{1}
+      \field{sortinithash}{27a2bc5dfb9ed0a0422134d636544b5d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 31st International Conference on Machine Learning (ICML-14)}
+      \field{title}{Towards end-to-end speech recognition with recurrent neural networks}
+      \field{usera}{C}
+      \field{usere}{Graves, Alex and Jaitly, Navdeep}
+      \field{userf}{Graves, Alex and Jaitly, Navdeep}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{pages}{1764\bibrangedash 1772}
+      \range{pages}{9}
+      \keyw{graves2014towards}
+    \endentry
+    \entry{mikolov2010recurrent}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=a2d359b12ca2fadf0b40136a73f021bb}{%
+           family={Mikolov},
+           familyi={M\bibinitperiod},
+           given={Tomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=532398c21f4c14f31d6c3f5c9fb97d3b}{%
+           family={Karafiát},
+           familyi={K\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=364818fb08021a626e6cb8076abfa49f}{%
+           family={Burget},
+           familyi={B\bibinitperiod},
+           given={Lukas},
+           giveni={L\bibinitperiod}}}%
+        {{hash=18e55141c7662cfc541f549ef9d2c87c}{%
+           family={Cernockỳ},
+           familyi={C\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=d787f09b6c6cc374a9ad21fe9120fc1f}{%
+           family={Khudanpur},
+           familyi={K\bibinitperiod},
+           given={Sanjeev},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{507b7807103cccd6a01e240d183d54d9}
+      \strng{fullhash}{cc68c5b634228e7cee993efd72747376}
+      \strng{authornamehash}{507b7807103cccd6a01e240d183d54d9}
+      \strng{authorfullhash}{cc68c5b634228e7cee993efd72747376}
+      \field{sortinit}{2}
+      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{INTERSPEECH 2010, 11th Annual Conference of the International Speech Communication Association, Makuhari, Chiba, Japan, September 26-30, 2010}
+      \field{title}{Recurrent neural network based language model}
+      \field{usera}{C}
+      \field{usere}{Mikolov, Tomas and Karafiát, Martin and Burget, Lukas and Cernockỳ, Jan and Khudanpur, Sanjeev}
+      \field{userf}{Mikolov, Tomas and Karafiát, Martin and Burget, Lukas and Cernockỳ, Jan and Khudanpur, Sanjeev}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{pages}{1045\bibrangedash 1048}
+      \range{pages}{4}
+      \keyw{mikolov2010recurrent}
+    \endentry
+    \entry{jurafsky2014speech}{book}{}
+      \name{author}{2}{}{%
+        {{hash=3147296c99a3f829087becd1a4eaec08}{%
+           family={Jurafsky},
+           familyi={J\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=7d1c7262a31a89cbc5dbdeb95fd7b4fb}{%
+           family={Martin},
+           familyi={M\bibinitperiod},
+           given={James\bibnamedelima H},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {. Pearson}%
+      }
+      \strng{namehash}{7bdbfb900a5244ebf878ba03a3111145}
+      \strng{fullhash}{7bdbfb900a5244ebf878ba03a3111145}
+      \strng{authornamehash}{7bdbfb900a5244ebf878ba03a3111145}
+      \strng{authorfullhash}{7bdbfb900a5244ebf878ba03a3111145}
+      \field{sortinit}{2}
+      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Speech and language processing}
+      \field{usera}{M}
+      \field{usere}{Jurafsky, Dan and Martin, James H}
+      \field{userf}{Jurafsky, Dan and Martin, James H}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \keyw{jurafsky2014speech}
+    \endentry
+    \entry{murveit1993large}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=5048a4744551b140c62589fac905d6a7}{%
+           family={Murveit},
+           familyi={M\bibinitperiod},
+           given={Hy},
+           giveni={H\bibinitperiod}}}%
+        {{hash=b5e548e7ed70530c1cc6fabef87987a9}{%
+           family={Butzberger},
+           familyi={B\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ad478e32aac137cd640286d4a3b27e1c}{%
+           family={Digalakis},
+           familyi={D\bibinitperiod},
+           given={Vassilios},
+           giveni={V\bibinitperiod}}}%
+        {{hash=30b3f4448d8af561ca43b36af870a879}{%
+           family={Weintraub},
+           familyi={W\bibinitperiod},
+           given={Mitch},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{25203ce791cc51622c25931207ab1bee}
+      \strng{fullhash}{db806b319b81008b67335de2640f8ff3}
+      \strng{authornamehash}{25203ce791cc51622c25931207ab1bee}
+      \strng{authorfullhash}{db806b319b81008b67335de2640f8ff3}
+      \field{sortinit}{2}
+      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE International Conference on Acoustics, Speech, and Signal Processing, 1993. ICASSP-93, 1993}
+      \field{title}{Large-vocabulary dictation using SRI's DECIPHER speech recognition system: Progressive search techniques}
+      \field{usera}{C}
+      \field{usere}{Murveit, Hy and Butzberger, John and Digalakis, Vassilios and Weintraub, Mitch}
+      \field{userf}{Murveit, Hy and Butzberger, John and Digalakis, Vassilios and Weintraub, Mitch}
+      \field{volume}{2}
+      \field{year}{1993}
+      \field{dateera}{ce}
+      \field{pages}{319\bibrangedash 322}
+      \range{pages}{4}
+      \keyw{murveit1993large}
+    \endentry
+    \entry{graves2009novel}{article}{}
+      \name{author}{6}{}{%
+        {{hash=dfca94b0427da7f9088af596e23b46c0}{%
+           family={Graves},
+           familyi={G\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0c68669e21dde05e765f1aed0bb9db58}{%
+           family={Liwicki},
+           familyi={L\bibinitperiod},
+           given={Marcus},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9320fcd79fc9668957f2f8911a5d1890}{%
+           family={Fernández},
+           familyi={F\bibinitperiod},
+           given={Santiago},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4be8a96edf8263ebba4b8b87df0731d6}{%
+           family={Bertolami},
+           familyi={B\bibinitperiod},
+           given={Roman},
+           giveni={R\bibinitperiod}}}%
+        {{hash=625c3a38db540fc74378c3ebda8cda48}{%
+           family={Bunke},
+           familyi={B\bibinitperiod},
+           given={Horst},
+           giveni={H\bibinitperiod}}}%
+        {{hash=288bdbcfe1b91ad7484d7a24f74f99ed}{%
+           family={Schmidhuber},
+           familyi={S\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{a0149f9de84d9c5e8a1724cfd7e1bd80}
+      \strng{fullhash}{5a4d7c4bda7e23abfe60c1e8c75484a5}
+      \strng{authornamehash}{a0149f9de84d9c5e8a1724cfd7e1bd80}
+      \strng{authorfullhash}{5a4d7c4bda7e23abfe60c1e8c75484a5}
+      \field{sortinit}{2}
+      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE transactions on pattern analysis and machine intelligence}
+      \field{number}{5}
+      \field{title}{A novel connectionist system for unconstrained handwriting recognition}
+      \field{usera}{J}
+      \field{usere}{Graves, Alex and Liwicki, Marcus and Fernández, Santiago and Bertolami, Roman and Bunke, Horst and Schmidhuber, Jürgen}
+      \field{userf}{Graves, Alex and Liwicki, Marcus and Fernández, Santiago and Bertolami, Roman and Bunke, Horst and Schmidhuber, Jürgen}
+      \field{volume}{31}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \field{pages}{855\bibrangedash 868}
+      \range{pages}{14}
+      \keyw{graves2009novel}
+    \endentry
+    \entry{graves2013speech}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=dfca94b0427da7f9088af596e23b46c0}{%
+           family={Graves},
+           familyi={G\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0d87a656f9bdc99e921c45f73da515b8}{%
+           family={Mohamed},
+           familyi={M\bibinitperiod},
+           given={Abdel-rahman},
+           giveni={A\bibinithyphendelim r\bibinitperiod}}}%
+        {{hash=9a8750ccdb2a4cf14d2655face1ce016}{%
+           family={Hinton},
+           familyi={H\bibinitperiod},
+           given={Geoffrey},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{4f389071d4a8c288b23b12fb452cbb6a}
+      \strng{fullhash}{4f389071d4a8c288b23b12fb452cbb6a}
+      \strng{authornamehash}{4f389071d4a8c288b23b12fb452cbb6a}
+      \strng{authorfullhash}{4f389071d4a8c288b23b12fb452cbb6a}
+      \field{sortinit}{2}
+      \field{sortinithash}{0aa614ace9f3a40ef5a67e7f7a184048}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Acoustics, speech and signal processing (icassp), 2013 ieee international conference on}
+      \field{title}{Speech recognition with deep recurrent neural networks}
+      \field{usera}{C}
+      \field{usere}{Graves, Alex and Mohamed, Abdel-rahman and Hinton, Geoffrey}
+      \field{userf}{Graves, Alex and Mohamed, Abdel-rahman and Hinton, Geoffrey}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{pages}{6645\bibrangedash 6649}
+      \range{pages}{5}
+      \keyw{graves2013speech}
+    \endentry
+    \entry{hochreiter1991untersuchungen}{article}{}
+      \name{author}{1}{}{%
+        {{hash=41b31e29fb2bdbf9f5c9c1b0d5b3e815}{%
+           family={Hochreiter},
+           familyi={H\bibinitperiod},
+           given={Sepp},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{41b31e29fb2bdbf9f5c9c1b0d5b3e815}
+      \strng{fullhash}{41b31e29fb2bdbf9f5c9c1b0d5b3e815}
+      \strng{authornamehash}{41b31e29fb2bdbf9f5c9c1b0d5b3e815}
+      \strng{authorfullhash}{41b31e29fb2bdbf9f5c9c1b0d5b3e815}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Diploma, Technische Universität München}
+      \field{title}{Untersuchungen zu dynamischen neuronalen Netzen}
+      \field{usera}{J}
+      \field{usere}{Hochreiter, Sepp}
+      \field{userf}{Hochreiter, Sepp}
+      \field{volume}{91}
+      \field{year}{1991}
+      \field{dateera}{ce}
+      \keyw{hochreiter1991untersuchungen}
+    \endentry
+    \entry{hochreiter2001gradient}{misc}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{4}{}{%
+        {{hash=41b31e29fb2bdbf9f5c9c1b0d5b3e815}{%
+           family={Hochreiter},
+           familyi={H\bibinitperiod},
+           given={Sepp},
+           giveni={S\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=f247df2d5de3a9ccb24aa9ee9fdaf277}{%
+           family={Frasconi},
+           familyi={F\bibinitperiod},
+           given={Paolo},
+           giveni={P\bibinitperiod}}}%
+        {{hash=288bdbcfe1b91ad7484d7a24f74f99ed}{%
+           family={Schmidhuber},
+           familyi={S\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {A field guide to dynamical recurrent neural networks. IEEE Press}%
+      }
+      \strng{namehash}{fdd0978f84521bb89efd28290caaadd9}
+      \strng{fullhash}{825de17c4ecdd1650ada8630403b2980}
+      \strng{authornamehash}{fdd0978f84521bb89efd28290caaadd9}
+      \strng{authorfullhash}{825de17c4ecdd1650ada8630403b2980}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Gradient flow in recurrent nets: the difficulty of learning long-term dependencies}
+      \field{usere}{Hochreiter, Sepp and Bengio, Yoshua and Frasconi, Paolo and Schmidhuber, Jürgen and others}
+      \field{userf}{Hochreiter, Sepp and Bengio, Yoshua and Frasconi, Paolo and Schmidhuber, Jürgen and others}
+      \field{year}{2001}
+      \field{dateera}{ce}
+      \keyw{hochreiter2001gradient}
+    \endentry
+    \entry{ghahremani2016self}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=0ce05409cd545be16c10a512a5e3fb09}{%
+           family={Ghahremani},
+           familyi={G\bibinitperiod},
+           given={Pegah},
+           giveni={P\bibinitperiod}}}%
+        {{hash=c137643a1d9eebff847bff4a61a5326d}{%
+           family={Droppo},
+           familyi={D\bibinitperiod},
+           given={Jasha},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{2ccca53ffb12ef31f75d9ab4b86d4532}
+      \strng{fullhash}{2ccca53ffb12ef31f75d9ab4b86d4532}
+      \strng{authornamehash}{2ccca53ffb12ef31f75d9ab4b86d4532}
+      \strng{authorfullhash}{2ccca53ffb12ef31f75d9ab4b86d4532}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Acoustics, Speech and Signal Processing (ICASSP), 2016 IEEE International Conference on}
+      \field{title}{Self-stabilized deep neural network}
+      \field{usera}{C}
+      \field{usere}{Ghahremani, Pegah and Droppo, Jasha}
+      \field{userf}{Ghahremani, Pegah and Droppo, Jasha}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{pages}{5450\bibrangedash 5454}
+      \range{pages}{5}
+      \keyw{ghahremani2016self}
+    \endentry
+    \entry{liu2016investigation}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=0b07af422f6616fac129405a8b4b1de4}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Qi},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=bfeae7f36f8cc1f5193fda2b42b3c8b6}{%
+           family={Tan},
+           familyi={T\bibinitperiod},
+           given={Tian},
+           giveni={T\bibinitperiod}}}%
+        {{hash=f5a13dcc79cf0ffe67e50260860f709a}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Kai},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{57100d143e3aa1b81543cb4174ba4905}
+      \strng{fullhash}{57100d143e3aa1b81543cb4174ba4905}
+      \strng{authornamehash}{57100d143e3aa1b81543cb4174ba4905}
+      \strng{authorfullhash}{57100d143e3aa1b81543cb4174ba4905}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Signal Processing (ICSP), 2016 IEEE 13th International Conference on}
+      \field{title}{An investigation on deep learning with beta stabilizer}
+      \field{usera}{C}
+      \field{usere}{Liu, Qi and Tan, Tian and Yu, Kai}
+      \field{userf}{Liu, Qi and Tan, Tian and Yu, Kai}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{pages}{557\bibrangedash 561}
+      \range{pages}{5}
+      \keyw{liu2016investigation}
+    \endentry
+    \entry{lecun1998efficient}{incollection}{}
+      \name{author}{4}{}{%
+        {{hash=6a1aa6b7eab12b931ca7c7e3f927231d}{%
+           family={LeCun},
+           familyi={L\bibinitperiod},
+           given={Yann},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=ac762f2592005edf6bad58f566967c6c}{%
+           family={Bottou},
+           familyi={B\bibinitperiod},
+           given={Léon},
+           giveni={L\bibinitperiod}}}%
+        {{hash=93f1b5b4c193098db03883d489f1114a}{%
+           family={Orr},
+           familyi={O\bibinitperiod},
+           given={Genevieve\bibnamedelima B},
+           giveni={G\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=9f1b6144a45b1967e989e74552e37ada}{%
+           family={Müller},
+           familyi={M\bibinitperiod},
+           given={Klaus-Robert},
+           giveni={K\bibinithyphendelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{4cadd7cca0a755d82dafefc620ad6246}
+      \strng{fullhash}{5bc3cbeca25f7a850e654244b4819565}
+      \strng{authornamehash}{4cadd7cca0a755d82dafefc620ad6246}
+      \strng{authorfullhash}{5bc3cbeca25f7a850e654244b4819565}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Neural networks: Tricks of the trade}
+      \field{title}{Efficient backprop}
+      \field{usera}{G}
+      \field{usere}{LeCun, Yann and Bottou, Léon and Orr, Genevieve B and Müller, Klaus-Robert}
+      \field{userf}{LeCun, Yann and Bottou, Léon and Orr, Genevieve B and Müller, Klaus-Robert}
+      \field{year}{1998}
+      \field{dateera}{ce}
+      \field{pages}{9\bibrangedash 50}
+      \range{pages}{42}
+      \keyw{lecun1998efficient}
+    \endentry
+    \entry{konevcny2016mini}{article}{}
+      \name{author}{4}{}{%
+        {{hash=77de557ed1f3039e29b00bc26bf41080}{%
+           family={Konečnỳ},
+           familyi={K\bibinitperiod},
+           given={Jakub},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6ba98b57fe1f95279a7b276f87e11088}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Jie},
+           giveni={J\bibinitperiod}}}%
+        {{hash=972f2a6c228c82719a54368d49838fd7}{%
+           family={Richtárik},
+           familyi={R\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=eb83c47cdd9a6edbbd392a27fc868d9a}{%
+           family={Takáč},
+           familyi={T\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{67687475cf64be76f1f471ece5d2a94a}
+      \strng{fullhash}{b3e51d83afb0c0876345b44d8e1a583c}
+      \strng{authornamehash}{67687475cf64be76f1f471ece5d2a94a}
+      \strng{authorfullhash}{b3e51d83afb0c0876345b44d8e1a583c}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Journal of Selected Topics in Signal Processing}
+      \field{number}{2}
+      \field{title}{Mini-batch semi-stochastic gradient descent in the proximal setting}
+      \field{usera}{J}
+      \field{usere}{Konečnỳ, Jakub and Liu, Jie and Richtárik, Peter and Takáč, Martin}
+      \field{userf}{Konečnỳ, Jakub and Liu, Jie and Richtárik, Peter and Takáč, Martin}
+      \field{volume}{10}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{pages}{242\bibrangedash 255}
+      \range{pages}{14}
+      \keyw{konevcny2016mini}
+    \endentry
+    \entry{yao2007early}{article}{}
+      \name{author}{3}{}{%
+        {{hash=6eeb7f2c1fa2eff006ff7b13c8d06b0d}{%
+           family={Yao},
+           familyi={Y\bibinitperiod},
+           given={Yuan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=50d9bfec9f6162486e5504b41791de0d}{%
+           family={Rosasco},
+           familyi={R\bibinitperiod},
+           given={Lorenzo},
+           giveni={L\bibinitperiod}}}%
+        {{hash=62046847d21ed822220f9acbe1c2f244}{%
+           family={Caponnetto},
+           familyi={C\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{cb51ff4c9967c3bb5431b8b81395982f}
+      \strng{fullhash}{cb51ff4c9967c3bb5431b8b81395982f}
+      \strng{authornamehash}{cb51ff4c9967c3bb5431b8b81395982f}
+      \strng{authorfullhash}{cb51ff4c9967c3bb5431b8b81395982f}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Constructive Approximation}
+      \field{number}{2}
+      \field{title}{On early stopping in gradient descent learning}
+      \field{usera}{J}
+      \field{usere}{Yao, Yuan and Rosasco, Lorenzo and Caponnetto, Andrea}
+      \field{userf}{Yao, Yuan and Rosasco, Lorenzo and Caponnetto, Andrea}
+      \field{volume}{26}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{pages}{289\bibrangedash 315}
+      \range{pages}{27}
+      \keyw{yao2007early}
+    \endentry
+    \entry{goodfellow2016deep}{book}{}
+      \name{author}{3}{}{%
+        {{hash=5d2585c11210cf1d4512e6e0a03ec315}{%
+           family={Goodfellow},
+           familyi={G\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=ccec1ccd2e1aa86960eb2e872c6b7020}{%
+           family={Courville},
+           familyi={C\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MIT press}%
+      }
+      \strng{namehash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{fullhash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{authornamehash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{authorfullhash}{3ae53fe582e8a815b118d26947eaa326}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Deep learning}
+      \field{usera}{M}
+      \field{usere}{Goodfellow, Ian and Bengio, Yoshua and Courville, Aaron}
+      \field{userf}{Goodfellow, Ian and Bengio, Yoshua and Courville, Aaron}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \keyw{goodfellow2016deep}
+    \endentry
+    \entry{shi2012towards}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=f11b70e99345438ef864b582c1376051}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Yangyang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=07ac78f2768b1e9becc197e196814ddf}{%
+           family={Wiggers},
+           familyi={W\bibinitperiod},
+           given={Pascal},
+           giveni={P\bibinitperiod}}}%
+        {{hash=33487eeaa3455a4c94a598c03af5f367}{%
+           family={Jonker},
+           familyi={J\bibinitperiod},
+           given={Catholijn\bibnamedelima M},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{2cb6ee09c4e3fb255b68c5de798d96ad}
+      \strng{fullhash}{2cb6ee09c4e3fb255b68c5de798d96ad}
+      \strng{authornamehash}{2cb6ee09c4e3fb255b68c5de798d96ad}
+      \strng{authorfullhash}{2cb6ee09c4e3fb255b68c5de798d96ad}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{INTERSPEECH}
+      \field{title}{Towards Recurrent Neural Networks Language Models with Linguistic and Contextual Features.}
+      \field{usera}{C}
+      \field{usere}{Shi, Yangyang and Wiggers, Pascal and Jonker, Catholijn M}
+      \field{userf}{Shi, Yangyang and Wiggers, Pascal and Jonker, Catholijn M}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{pages}{1664\bibrangedash 1667}
+      \range{pages}{4}
+      \keyw{shi2012towards}
+    \endentry
+    \entry{Tjong2000Introduction}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=7921052a34136859966ef24f0f8dda7a}{%
+           family={Tjong},
+           familyi={T\bibinitperiod},
+           given={Erik\bibnamedelima F},
+           giveni={E\bibinitperiod\bibinitdelim F\bibinitperiod},
+           suffix={Kim\bibnamedelima Sang},
+           suffixi={K\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=e678111ce21a75a666c08ede6e0b8c5e}{%
+           family={Buchholz},
+           familyi={B\bibinitperiod},
+           given={Sabine},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{ed2f45e17c0940f95bc01809b5648147}
+      \strng{fullhash}{ed2f45e17c0940f95bc01809b5648147}
+      \strng{authornamehash}{ed2f45e17c0940f95bc01809b5648147}
+      \strng{authorfullhash}{ed2f45e17c0940f95bc01809b5648147}
+      \field{sortinit}{3}
+      \field{sortinithash}{197da6d6c34c6b20ce45c4d4baace5a4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The Workshop on Learning Language in Logic and the Conference on Computational Natural Language Learning}
+      \field{title}{Introduction to the CoNLL-2000 shared task: chunking}
+      \field{usera}{C}
+      \field{usere}{Tjong, Kim Sang, Erik F and Buchholz, Sabine}
+      \field{userf}{Tjong, Kim Sang, Erik F and Buchholz, Sabine}
+      \field{year}{2000}
+      \field{dateera}{ce}
+      \field{pages}{127\bibrangedash 132}
+      \range{pages}{6}
+      \keyw{Tjong2000Introduction}
+    \endentry
+    \entry{shi2015integrating}{article}{}
+      \name{author}{7}{}{%
+        {{hash=f11b70e99345438ef864b582c1376051}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Yangyang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=b10bfad34775baebde587a36658f5bc1}{%
+           family={Larson},
+           familyi={L\bibinitperiod},
+           given={Martha},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7cec66c9bb0aa55669c2a8ef5af94f51}{%
+           family={Pelemans},
+           familyi={P\bibinitperiod},
+           given={Joris},
+           giveni={J\bibinitperiod}}}%
+        {{hash=33487eeaa3455a4c94a598c03af5f367}{%
+           family={Jonker},
+           familyi={J\bibinitperiod},
+           given={Catholijn\bibnamedelima M},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=e0be8c4907fa791693a6f9c1ab973212}{%
+           family={Wambacq},
+           familyi={W\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+        {{hash=07ac78f2768b1e9becc197e196814ddf}{%
+           family={Wiggers},
+           familyi={W\bibinitperiod},
+           given={Pascal},
+           giveni={P\bibinitperiod}}}%
+        {{hash=25f3a7955033595754fd16938bacbb51}{%
+           family={Demuynck},
+           familyi={D\bibinitperiod},
+           given={Kris},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{d325dc1ad55feb0e0d042e6a2a8593ea}
+      \strng{fullhash}{d32962c9221c8a99e161ce9b354c0512}
+      \strng{authornamehash}{d325dc1ad55feb0e0d042e6a2a8593ea}
+      \strng{authorfullhash}{d32962c9221c8a99e161ce9b354c0512}
+      \field{sortinit}{4}
+      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Speech Communication}
+      \field{title}{Integrating meta-information into recurrent neural network language models}
+      \field{usera}{J}
+      \field{usere}{Shi, Yangyang and Larson, Martha and Pelemans, Joris and Jonker, Catholijn M and Wambacq, Patrick and Wiggers, Pascal and Demuynck, Kris}
+      \field{userf}{Shi, Yangyang and Larson, Martha and Pelemans, Joris and Jonker, Catholijn M and Wambacq, Patrick and Wiggers, Pascal and Demuynck, Kris}
+      \field{volume}{73}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{pages}{64\bibrangedash 80}
+      \range{pages}{17}
+      \keyw{shi2015integrating}
+    \endentry
+    \entry{Collobert2008A}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=133261178beda1dc3991e0e1dfd5a791}{%
+           family={Collobert},
+           familyi={C\bibinitperiod},
+           given={Ronan},
+           giveni={R\bibinitperiod}}}%
+        {{hash=417a25f3511d7c21e76d4a15e67dd679}{%
+           family={Weston},
+           familyi={W\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{f03c11485c163ec75428e6ceb05851f1}
+      \strng{fullhash}{f03c11485c163ec75428e6ceb05851f1}
+      \strng{authornamehash}{f03c11485c163ec75428e6ceb05851f1}
+      \strng{authorfullhash}{f03c11485c163ec75428e6ceb05851f1}
+      \field{sortinit}{4}
+      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Conference}
+      \field{title}{A unified architecture for natural language processing: deep neural networks with multitask learning}
+      \field{usera}{C}
+      \field{usere}{Collobert, Ronan and Weston, Jason}
+      \field{userf}{Collobert, Ronan and Weston, Jason}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{pages}{160\bibrangedash 167}
+      \range{pages}{8}
+      \keyw{Collobert2008A}
+    \endentry
+    \entry{schmid1994part}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=69b276056a5f6ac48835b47af0b8713e}{%
+           family={Schmid},
+           familyi={S\bibinitperiod},
+           given={Helmut},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{69b276056a5f6ac48835b47af0b8713e}
+      \strng{fullhash}{69b276056a5f6ac48835b47af0b8713e}
+      \strng{authornamehash}{69b276056a5f6ac48835b47af0b8713e}
+      \strng{authorfullhash}{69b276056a5f6ac48835b47af0b8713e}
+      \field{sortinit}{4}
+      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 15th conference on Computational linguistics-Volume 1}
+      \field{title}{Part-of-speech tagging with neural networks}
+      \field{usera}{C}
+      \field{usere}{Schmid, Helmut}
+      \field{userf}{Schmid, Helmut}
+      \field{year}{1994}
+      \field{dateera}{ce}
+      \field{pages}{172\bibrangedash 176}
+      \range{pages}{5}
+      \keyw{schmid1994part}
+    \endentry
+    \entry{Wang2015A}{article}{}
+      \name{author}{5}{}{%
+        {{hash=619038b79b42cb86d8421b472e0eaf7a}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Peilu},
+           giveni={P\bibinitperiod}}}%
+        {{hash=bd4968147b63f3be255e1c58da6f95f7}{%
+           family={Qian},
+           familyi={Q\bibinitperiod},
+           given={Yao},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=69ee91102853260af6e5f8f02f416e1e}{%
+           family={Soong},
+           familyi={S\bibinitperiod},
+           given={Frank\bibnamedelima K.},
+           giveni={F\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=a26b1c586372c88da93cac52c6337743}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Lei},
+           giveni={L\bibinitperiod}}}%
+        {{hash=83dfa007c00ea6000ab8745d0b697520}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Hai},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{2f52a54ac6a1835cb71009de7eb74e38}
+      \strng{fullhash}{2c6ec59da17af48bc90160874416bc26}
+      \strng{authornamehash}{2f52a54ac6a1835cb71009de7eb74e38}
+      \strng{authorfullhash}{2c6ec59da17af48bc90160874416bc26}
+      \field{sortinit}{4}
+      \field{sortinithash}{d221becdd544034cf9082056cd6e6d2d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer Science}
+      \field{title}{A Unified Tagging Solution: Bidirectional LSTM Recurrent Neural Network with Word Embedding}
+      \field{usera}{J}
+      \field{usere}{Wang, Peilu and Qian, Yao and Soong, Frank K. and He, Lei and Zhao, Hai}
+      \field{userf}{Wang, Peilu and Qian, Yao and Soong, Frank K. and He, Lei and Zhao, Hai}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \keyw{Wang2015A}
+    \endentry
+    \entry{Ghahremani2016Self}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=0ce05409cd545be16c10a512a5e3fb09}{%
+           family={Ghahremani},
+           familyi={G\bibinitperiod},
+           given={Pegah},
+           giveni={P\bibinitperiod}}}%
+        {{hash=c137643a1d9eebff847bff4a61a5326d}{%
+           family={Droppo},
+           familyi={D\bibinitperiod},
+           given={Jasha},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{2ccca53ffb12ef31f75d9ab4b86d4532}
+      \strng{fullhash}{2ccca53ffb12ef31f75d9ab4b86d4532}
+      \strng{authornamehash}{2ccca53ffb12ef31f75d9ab4b86d4532}
+      \strng{authorfullhash}{2ccca53ffb12ef31f75d9ab4b86d4532}
+      \field{sortinit}{5}
+      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE International Conference on Acoustics, Speech and Signal Processing}
+      \field{title}{Self-stabilized deep neural network}
+      \field{usera}{C}
+      \field{usere}{Ghahremani, Pegah and Droppo, Jasha}
+      \field{userf}{Ghahremani, Pegah and Droppo, Jasha}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{pages}{5450\bibrangedash 5454}
+      \range{pages}{5}
+      \keyw{Ghahremani2016Self}
+    \endentry
+    \entry{Liu2016investigation}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=7a562abfeb52df95140b24d187480add}{%
+           family={Qi},
+           familyi={Q\bibinitperiod},
+           given={Liu},
+           giveni={L\bibinitperiod}}}%
+        {{hash=0c9929e8a7ae00098cc0175d823bb6b9}{%
+           family={Tian},
+           familyi={T\bibinitperiod},
+           given={Tan},
+           giveni={T\bibinitperiod}}}%
+        {{hash=80fbce4caa43b378134d44f4b903c628}{%
+           family={Kai},
+           familyi={K\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{1631c0cc0f161be8baca49eab8f73d2a}
+      \strng{fullhash}{1631c0cc0f161be8baca49eab8f73d2a}
+      \strng{authornamehash}{1631c0cc0f161be8baca49eab8f73d2a}
+      \strng{authorfullhash}{1631c0cc0f161be8baca49eab8f73d2a}
+      \field{sortinit}{5}
+      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE International Conference on Signal Processing}
+      \field{title}{An Investigation on Deep Learning with Beta Stabilizer}
+      \field{usera}{C}
+      \field{usere}{Qi, Liu and Tian, Tan and Kai, Yu}
+      \field{userf}{Qi, Liu and Tian, Tan and Kai, Yu}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{pages}{557\bibrangedash 561}
+      \range{pages}{5}
+      \keyw{Liu2016investigation}
+    \endentry
+    \entry{stolcke2002srilm}{inproceedings}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=8b60cd3ee633c8d1d585f08b92fefbf4}{%
+           family={Stolcke},
+           familyi={S\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ec4567910531a67196bd6e18142a38aa}
+      \strng{fullhash}{ec4567910531a67196bd6e18142a38aa}
+      \strng{authornamehash}{ec4567910531a67196bd6e18142a38aa}
+      \strng{authorfullhash}{ec4567910531a67196bd6e18142a38aa}
+      \field{sortinit}{5}
+      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Interspeech}
+      \field{title}{SRILM-an extensible language modeling toolkit.}
+      \field{usera}{C}
+      \field{usere}{Stolcke, Andreas and others}
+      \field{userf}{Stolcke, Andreas and others}
+      \field{volume}{2002}
+      \field{year}{2002}
+      \field{dateera}{ce}
+      \field{pages}{2002}
+      \range{pages}{1}
+      \keyw{stolcke2002srilm}
+    \endentry
+    \entry{Toutanova2000Enriching}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=b92aa283415413bb8d2a1548716d0c7d}{%
+           family={Toutanova},
+           familyi={T\bibinitperiod},
+           given={Kristina},
+           giveni={K\bibinitperiod}}}%
+        {{hash=016fc1e04b3b878ce0ba16c74854c0f6}{%
+           family={Manning},
+           familyi={M\bibinitperiod},
+           given={Christopher\bibnamedelima D.},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{659d7d008460678a899804651050dd88}
+      \strng{fullhash}{659d7d008460678a899804651050dd88}
+      \strng{authornamehash}{659d7d008460678a899804651050dd88}
+      \strng{authorfullhash}{659d7d008460678a899804651050dd88}
+      \field{sortinit}{5}
+      \field{sortinithash}{c9df3c9fb8f555dd9201cedc5e343021}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Joint Sigdat Conference on Empirical Methods in Natural Language Processing and Very Large Corpora: Held in Conjunction with the Meeting of the Association for Computational Linguistics}
+      \field{title}{Enriching the knowledge sources used in a maximum entropy part-of-speech tagger}
+      \field{usera}{C}
+      \field{usere}{Toutanova, Kristina and Manning, Christopher D.}
+      \field{userf}{Toutanova, Kristina and Manning, Christopher D.}
+      \field{year}{2000}
+      \field{dateera}{ce}
+      \field{pages}{63\bibrangedash 70}
+      \range{pages}{8}
+      \keyw{Toutanova2000Enriching}
     \endentry
   \endsortlist
+  \missing{Andrew1967Viterbi}
+  \missing{Liu2016Joint}
+  \missing{Taylor2003The}
 \endrefsection
 \endinput
 

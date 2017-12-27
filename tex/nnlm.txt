@@ -1,0 +1,518 @@
+%# -*- coding: utf-8-unix -*-
+%%==================================================
+%% chapter01.tex for SJTU Master Thesis
+%%==================================================
+
+%\bibliographystyle{sjtu2}%[此处用于每章都生产参考文献]
+\chapter{神经网络语言模型}
+\label{chap:nnlm}
+\documentclass{llncs}
+\usepackage[utf8]{inputenc}
+\usepackage{cleveref}
+\usepackage{amsmath,graphicx}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{amssymb,amsmath,bm}
+\usepackage{cleveref}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{xeCJK}
+\usetikzlibrary{arrows,shapes,chains}
+\begin{document}
+
+\section{面向结构化语言模型的学习率自适应}
+前一章介绍了循环神经网络（RNN）和加入长短时间记忆单元（LSTM）语言模型。
+
+在神经网络的训练过程中，学习率是一个重要并且敏感的参数，需要用到先验知识和进行大量实验去找到符合特定模型的最优学习率才能得到最优解。在过去的研究中，在[8]中提出了在DNN模型中采用学习率的自适应算法，能够降低模型对初始学习率的敏感度和提升收敛速度。在此基础上，这个算法被应用到LSTM循环神经网络声学模型中[9]，虽然可以一定程度上降低对初始学习率的敏感度和收敛速度，却会牺牲掉一部分性能，效果并不理想。
+
+在语言模型中引入稳定算子beta进行初始学习率的自适应能够很大幅度忽略初始学习率对结果的影响；同时，稳定算子能够较大幅度提升语言模型的收敛速度，有效减少不必要的训练时间；在多种LSTM语言模型引入稳定算子的算法中，每个隐层的参数分别拥有自己独立的稳定算子会使结果更优。
+
+尤其是在本文的主要工作——结构化语言模型的研究中，不同的结构的特点和任务不一样，用相同的学习率往往会使结果达不到预期。
+因此动态的调整不同结构中的学习率至关重要。本人也对传统DNN上的$\beta$	稳定算子方法做了相应的优化，将其在LSTM语言模型中进行实现、测试。最后证实有效并应用于结构化语言模型的研究。
+
+在此部分的工作中，我们将学习率的自适应算法应用在语言模型中，后文统一称为引入稳定算子beta，在训练中动态调整beta以达到自适应学习率的目的。我们在不同的语言模型网络结构中尝试加入稳定算子，探究其对训练结果、收敛速度、初始学习率的敏感程度上的影响。同时，我们参考各机器学习工具的RNN实现中，往往会通过对参数加入L2范数优化以达到避免过拟合、提升模型性能的目的，对稳定算子加入L2范数，研究优化后的模型性能。
+
+
+\subsection{随机梯度下降法和学习率}
+
+神经网络模型的训练开始用的是批梯度下降这种最优化求解方法。因为训练速度过慢而采用随机梯度下降法（SGD）[6]。随机梯度下降（SGD）是一种常用的最优化问题求解方法，然而该方法依然存在迭代次数过多以及搜索盲目的问题。而小批量随机梯度下降（Mini-batch SGD，MBGD）能够折衷训练时间和训练效果，更是广泛地被用于各类神经网络的训练中[7]。
+
+下面我们介绍一下小批量随机梯度下降的数学原理和理论过程。
+训练目标是更新神经网络中的参数$\theta$，首先根据损失函数$L$ 计算出每个参数$\theta_i$对应的梯度为公式\ref{eq:deltai}，
+\begin{equation}
+	\label{eq:deltai}
+   	{\Delta _i} = \frac{{\partial L}}{{\partial {\theta _i}}}
+\end{equation} 
+
+根据梯度和学习率对该参数更具公式\ref{eq:theta}进行更新
+\begin{equation}
+	\label{eq:theta}
+   	{\theta_i} = {\theta_i} - \eta {\Delta_i}
+\end{equation} 
+	 
+其中$\eta$是学习率，即通俗意义上的步长。
+实际训练中，学习率会随着训练的进行变化，调整学习率的方法有好几种，目前用的比较多的两种是提前停止法[10]和减半法[11]。提前停止法是当某一轮监督集上的结果变差了即停止训练。减半法是当某一轮的监督集上的结果变差时将学习率减半，继续进行训练。
+
+	但无论是哪一种调整学习率的方法，都对初始学习率的值非常敏感，学习率太大会导致无法收敛，学习太小同样会导致无法收敛或者收敛速度过慢。并且不同的初始学习率可能会对总的学习轮数影响较大，不同任务的合理的初始学习率也各不相同，为了得到合理的初始学习率，需要做大量的试验。因此为了减少甚至消除初始学习率对试验结果的影响，弱化掉选取初始学习率这一过程，关于在训练算法中加入稳定算子来进行学习率的自适应的算法应运而生。本文着重研究在LSTM语言模型中加入稳定算子的影响，并对其进行L2范数以达到优化目的。
+    
+
+\subsection{稳定算子Beta及自适应}   
+在微软的研究中，提出引入稳定算子进行模型学习率的自适应，使得神经网络对于学习率的敏感度降低，将研究人员从调整学习率的繁琐重复工作中解放出来。具体方法是为DNN神经网络中每一层配备一个稳定算子beta。普通的DNN隐层的矩阵计算公式为\ref{eq:y}
+
+\begin{equation}
+	\label{eq:y}
+   	y = Wx + b
+\end{equation} 	 
+其中x是输入向量，y是输出向量，W是现行变化参数矩阵，b是偏移系数向量。
+加入beta稳定算子后的矩阵公式为公式\ref{ye}，
+
+\begin{equation}
+	\label{eq:ye}
+   	y = {e^\beta }Wx + b
+\end{equation} 
+
+$e$是自然对数， 是稳定算子。
+加入$\beta$后的模型训练过程中，前向传播可以直接按照上述公式进行，但是在反向传播训练的过程中，需要计算$x$，$W$，$b$和$\beta$的梯度。
+其中x和W的梯度进行了小幅度修改，$b$的梯度没有改变，如公式\ref{eq:Lx}所示
+
+\begin{equation}
+	\label{eq:Lx}
+   	\begin{split}
+\frac{{\partial L}}{{\partial x}} = {e^\beta }{W^{\rm T}}\frac{{\partial L}}{{\partial y}},\\
+\frac{{\partial L}}{{\partial W}} = {e^\beta }\frac{{\partial L}}{{\partial y}}{x^{\rm T}},\\
+\frac{{\partial L}}{{\partial b}} = \frac{{\partial L}}{{\partial y}}
+\end{split}
+\end{equation} 	 
+
+剩下的问题是如何更新$\beta$呢，根据求导的链式法则有公式\ref{eq:Lx‘}
+
+\begin{equation}
+	\label{eq:Lx‘}
+   	\frac{{\partial L}}{{\partial x}} = \frac{{\partial L}}{{\partial y}}\frac{{\partial y}}{{\partial \beta }} = {e^\beta }\frac{{\partial {L^{\rm T}}}}{{\partial y}}Wx
+\end{equation} 
+
+根据上面求$x$的梯度公式，可以得到公式\ref{eq:Lbeta}
+
+\begin{equation}
+	\label{eq:Lbeta}
+   	\frac{{\partial L}}{{\partial \beta }} = \frac{{\partial {L^{\rm T}}}}{{\partial x}}x
+\end{equation}
+
+故有公式\ref{eq:betaL}
+
+\begin{equation}
+	\label{eq:betaL}
+   	\beta  = \beta  - \eta \frac{{\partial {L^{\rm T}}}}{{\partial x}}x
+\end{equation} 
+
+\subsection{LSTM语言模型引入稳定算子}  
+
+LSTM是一种特殊的RNN网络，将原始的RNN网络的隐层单元替换为LSTM记忆单元，它不仅保留着RNN的记忆历史的功能，还能在记忆门的作用下动态调整记忆长短，如公式\ref{eq:memoryb}所示。
+
+\begin{equation}\label{eq:memoryb}
+\begin{split}
+i_t &= \sigma (W_{xi}x_t+W_{hi}h_{t-1}+W_{ci}c_{t-1}+b_i) \\
+f_t &= \sigma (W_{xf}x_t+W_{hf}h_{t-1}+W_{cf}c_{t-1}+b_f) \\
+c_t &= f_{t}c_{t-1}+i_{t}\tanh(W_{xc}x_t+W_{hc}h_{t-1}+b_c) \\
+o_t &= \sigma (W_{xo}x_{t}+W_{ho}h_{t-1}+W_{co}c_t+b_o) \\
+h_t &= o_t \tanh(c_t)
+\end{split}
+\end{equation}
+
+由微软提出的DNN网络中的学习率自适应方法适用于普通深度神经网络中的现行矩阵变换，然而无法直接应用于在LSTM网络中，因为在每个LSTM单元中，分别有三个门和一个仿射变换操作。因此在刘奇的研究中，主要比较了三种不同的方法：每层共享一个$\beta$，相同种类的门共享一个$\beta$，以及每个门的beta都各不相同。其中第三种方式中，每个$\beta$能够单独地分别调整每个参数矩阵，因而表现最好。该方法公式的修改如公式\ref{eq:blockbeta}：
+\begin{equation}\label{eq:blockbeta}
+\begin{split}
+{{\rm{i}}_t}&  =  \sigma {\rm{ ( }}{{\rm{e}}^{{\beta _{xi}}}}{{\rm{W}}_{xi}}{{\rm{x}}_t}{\rm{ +  }}{{\rm{e}}^{{\beta _{hi}}}}{{\rm{W}}_{hi}}{{\rm{h}}_{t - 1}}{\rm{ +  }}{{\rm{e}}^{{\beta _{ci}}}}{{\rm{W}}_{ci}}{{\rm{c}}_{t - 1}}{\rm{ +  }}{{\rm{b}}_i}{\rm{)}}\\
+{{\rm{f}}_t}&  =  \sigma {\rm{ ( }}{{\rm{e}}^{{\beta _{xf}}}}{{\rm{W}}_{xf}}{{\rm{x}}_t}{\rm{ +  }}{{\rm{e}}^{{\beta _{hf}}}}{{\rm{W}}_{hf}}{{\rm{h}}_{t - 1}}{\rm{ +  }}{{\rm{e}}^{{\beta _{cf}}}}{{\rm{W}}_{cf}}{\rm{ }}{{\rm{c}}_{t - 1}}{\rm{ +  }}{{\rm{b}}_f}{\rm{)}}\\
+{{\rm{c}}_t} &=  {{\rm{f}}_t} \cdot {\rm{ }}{{\rm{c}}_{t - 1}}{\rm{ +  }}{{\rm{i}}_t} \cdot {\rm{ tanh ( }}{{\rm{e}}^{{\beta _{xc}}}}{{\rm{W}}_{xc}}{{\rm{x}}_t}{\rm{ +  }}{{\rm{e}}^{{\beta _{hc}}}}{{\rm{W}}_{hc}}{{\rm{h}}_{t - 1}}{\rm{ +  }}{{\rm{b}}_c}{\rm{)}}\\
+{{\rm{o}}_t}&  =  \sigma {\rm{ ( }}{{\rm{e}}^{{\beta _{xo}}}}{{\rm{W}}_{xo}}{{\rm{x}}_t}{\rm{ +  }}{{\rm{e}}^{{\beta _{ho}}}}{{\rm{W}}_{ho}}{{\rm{h}}_{t - 1}}{\rm{ +  }}{{\rm{e}}^{{\beta _{co}}}}{{\rm{W}}_{co}}{{\rm{c}}_t}{\rm{ +  }}{{\rm{b}}_o}{\rm{)}}\\
+{{\rm{h}}_t}&  =  {{\rm{o}}_t} \cdot {\rm{ tanh ( }}{{\rm{c}}_t}{\rm{)}}
+\end{split}
+\end{equation}
+
+
+
+\subsection{稳定算子beta的L2norm范数} 
+在语言模型中，原始的损失函数为公式\ref{eq:Lori}，
+
+\begin{equation}
+	\label{eq:Lori}
+   	L\left( \theta  \right) =  - \sum\limits_{i = 1}^T {\log \left( {P\left( {s = {t_i}|{o_i}} \right)} \right)} 
+\end{equation} 
+
+目前在各机器学习框架的实现过程中，会对所有参数矩阵加入L2正则项优化，防止过拟合，使训练结果更好，加入L2优化后的损失函数为公式\ref{eq:Lnow}，
+
+\begin{equation}
+	\label{eq:Lnow}
+   	L\left( \theta  \right) =  - \sum\limits_{i = 1}^T {\log \left( {P\left( {s = {t_i}|{o_i}} \right)} \right)}  + \frac{\lambda }{2}||W|{|_2}
+\end{equation} 
+
+如前文所述，在前人工作中，稳定算子beta作为参数被加入到LSTM语言模型的训练中，并不改变损失函数。只是在更新beta的时候，把beta当做和其它参数一样求偏导数得到梯度，在学习率的控制下进行更新。本文在损失函数中为beta加上L2范数项，以达到优化的目的。加入稳定算子beta的L2正则项后的损失函数为\ref{eq:L2norm}。
+
+\begin{equation}
+	\label{eq:L2norm}
+   	{L_2}\left( \theta  \right) = L\left( \theta  \right) + \frac{{{\lambda _1}}}{2}||W|{|_2} + \frac{{{\lambda _2}}}{2}||{e^\beta }|{|_2}
+\end{equation} 
+
+
+这也是本文采用的方法。
+在加入稳定算子进行自适应的LSTM语言模型的训练过程中，别的参数的梯度求解方法和前面类似，包括beta在内的所有参数的更新方法，都是按照新的公式求解梯度，结合稳定算子和学习率进行更新。
+
+	关于此任务的所有实验和结果分析将会在第$4$章实验部分给出。最后得到的结论是稳定算子的引入对于普通语言模型和多任务语言模型来看在语言模型的性能上没有明显区别，并不像实验前预期的那样或许能智能调整不同任务的学习速度从而提升最后的训练结果，根据分析发现，这是因为多任务模型中为不同的任务分配权重已经可以达到不同任务学习速度不同的要求。另一方面，在参数量合理、没有超出训练数据的收敛极限的情况下，越深的网络，引入稳定算子的结果越好。
+	引入稳定算子的同时，在训练过程中对其加入L2正则优化会略微提升语言模型的性能，提升幅度大概1%，使beta收敛在一个比较小的值。
+
+
+
+
+
+\section{语言模型的结构化研究} 
+随着LSTM RNN模型被证实是一效果很好的模型，很多的研究工作便在此模型的基础上展开，语言模型也不例外。
+为了获得更进一步的提升，更多有效的复杂的网络结构也应运而生，比如说本章要讨论的结构化语言模型的研究。
+\ref{fig:LSTM} 展示了三种基础的在LSTM语言模型上的扩展结构，这三种结构正在被广泛使用，也会作为本文工作的基础工作和实验基线。 
+可以初步看出Multi-task、Multi-view和Joint train模型的结构特征和对比的区别。
+Multi-task是有多个输出和训练准则，同样有多个训练标注。
+Multi-view则是有多个输入，直观理解是训练一个目标模型，有多个辅助特征的输入。
+而Joitn train则是前两者进行一定程度的结合，偶尔会有一些时序上的错位，比如上一个时刻的第二个任务的的输出作为当前时刻的输入等等。
+模型细节和优劣将在后文分别进行描述，实验结果和比较，以及分析将会在第五章呈现。
+
+ \begin{figure}[tbhp!]
+    \small
+    \centering
+     \includegraphics[width=\linewidth]{pic/LSTM.pdf}
+    \caption{{\it (a)Multi-view LSTM语言模型. (b)Multi-task LSTM语言模型. (c)Joint train LSTM语言模型.}}
+    \label{fig:LSTM}x
+  \end{figure}
+\subsection{Multi-task语言模型}
+正如图\ref{fig:LSTM}$(b)$所展示的, 在Multi-task模型结构中,语言模型被设计成和其它的模型一起训练。
+它们共享输入和一部分的隐层\cite{Collobert2008A}, 
+
+However most researches on multi-task structure show that usually performance gain is achieved in the cooperating task, instead of LM task itself.
+
+
+\subsubsection{multi-task模型结构}
+\subsubsection{multi-task语言模型的表现}
+
+\subsection{Multi-view语言模型}
+Considering that some extra linguistic features might contribute to  language modeling, word and sentence level features were introduced in LM \cite{shi2012towards}. This model have multi inputs, which contains different views of information. So it is called multi-view model (see \Cref{fig:LSTM}$(a)$).
+
+As argued in Section 1, research on this kind of model shows improvements on perplexity and word prediction accuracy (WPA), but integrating this model with ASR did not lead to commensurate improvements \cite{shi2015integrating}.
+That is to say, the straightforward combination of words and features as the inputs of a language model do not contribute to speech recognition.
+
+Our proposed model is based on the multi-view structure, but is specially tailored for ASR task by using word-synchronized auxiliary feature.
+
+\subsubsection{multi-view语言模型的结构}
+\subsubsection{multi-view的多视角特征信息介绍}
+\subsubsection{multi-view语言模的表现}
+
+\subsection{Joint-train语言模型}
+Other works combined the multi-task structure with multi-view structure, which is shown in Figure~\ref{fig:LSTM}$(c)$. Not only multiple tasks were trained together, but also the inputs of this model were multi-view. LM was jointed with other spoken language understanding (SLU) or natural language process (NLP) task, some models of improved version are researched. Better than multi-task models, these works show slight improvement in PPL and ASR-rescoring, but more promotion is gained in the cooperating task \cite{Liu2016Joint}.
+
+
+\subsubsection{Joint-train语言模型结构}
+\subsubsection{Joint-train模型的表现}
+
+
+\section{单向辅助信息Joint-view语言模型}
+\subsection{研究动机及思路}
+如上文介绍所说，为了进一步提升语言模型的性能，研究者们在语言模型的结构化研究中做了很多工作。其中就有在训练模型的过程中加入额外信息的多视角学习，通过加入词层面的辅助信息和当前词一起训练以提升语言模型的性能\cite{shi2012towards}. 
+额外的辅助信息包括词性标注（part of speech,POS），命名实体识别（named entity recognition,NER），语法块（ chunking）\cite{Tjong2000Introduction}，句子的环境信息，语法解析信息等。
+这些辅助信息被合并到Multi-view模型中，甚至可以作为联合模型逐帧一起训练\cite{shi2015integrating}.但是虽然这些工作在混淆度的指标上有非常大的提升，但是在语音识别方向的重打分任务的词错误率（WER）和句子错误率（SER）中却依然没有提升，甚至有的还有所下降\cite{shi2012towards}\cite{shi2015integrating}。
+
+我们猜测造成上述现象的主要原因是因为那些额外的辅助信息用的都是标准的标注算法，比如最大熵算法和双向LSTM模型，这些模型虽然表现优秀，但是在标注过程中用到了全局信息。
+也就是不仅用到了前文的信息，更用到了后文的信息。
+这就意味着在训练语言模型的时候，给当前词的辅助信息中包含后文信息，然后语言模型再用后文信息去预测后面的词。有点类似于信息作弊的感觉。这也是为什么在PPL任务上表现优秀的原因。
+
+那为什么又在重打分任务中没有提升呢，这可能是因为重打分任务中的n-best集合（在第四章实验部分详细介绍）中的各种句子是本身就不合理的（语言模型得分很低），用不合理的后文信息得到的标注也会存在问题。
+也就是意味着用不合理的后文信息预测后面的词，自然会出现偏差。
+
+为了验证和解决这个问题，为了使得结构化语言模型不仅提升了语言模型的某个指标（PPL），更是要使得它在实际应用中（ASR任务）中有所提升，我们提出仅仅使用单向的辅助信息去训练结构化的语言模型。
+
+基于这个思想，我们进行了一系列研究工作。
+在我们的工作中，我们使用一个单向LSTM标注模型去进行双向信息的单向化。保证从词模型中出来的标注信息仅仅会包含历史信息，而不包含未来信息。
+紧接着，标注模型的输入被作为Multi-view语言模型的一个输入接入到一个LSTM语言模型结构中。
+在这种模型结构下，存在不同的训练方法，我们总共尝试了五种不同的训练方法。
+最后我们将我们提出的模型和前人的相似结构模型进行多方位的在PPL和ASR任务上的比较。
+
+
+
+         \vspace{-0.5em}
+\section{Related Work}
+\label{sec:psd-ctc-lat}
+         \vspace{-0.5em}
+
+
+
+\subsection{模型结构}
+我们的模型总共由两个部分组成：第一部分是用来生成单向辅助信息特征的标注模型；另一个是一个和标注模型链接在一起的Multi-view语言模型。
+对于这两个模型，我们都是用的单层单向LSTM模型，并且将这两个模型以此层面的粒度链接在一起。关于模型的详细介绍和数学基础将在下文给出。
+
+
+\subsubsection{Uni-LSTM tagging model}
+\label{sec:psd-ac-conf}
+标注模型是一种分类模型，一个标注模型是通过训练得到为每个输入序列找到它所属类别并输出。
+神经网络现在被广泛用于各种标注模型中\cite{schmid1994part}，因为它能大幅图提升传统统计学标注模型的性能。
+其中双向神经网络更为普遍\cite{Wang2015A}，由于前后文信息的紧密结合，更是使得标注模型进一步提升。
+神经网络的标注模型是根据输入输出它所属的类别的概率分布。
+
+
+
+  \begin{figure}[tbhp!]
+    \small
+    \centering
+    \input{pic/tagging.tex}
+    \caption{{\it uni-directional LSTM tagging model}}
+    \label{fig:tagging}
+  \end{figure}
+
+不过如前文所说，本文这里必须使用单向神经网络。
+另外在我们的验证实验和我们的三种标注任务中，双向LSTM模型相比于相同参数的单向LSTM模型仅仅有非常微小的性能提升。
+如图\ref{fig:tagging}所示，这是一个单向模型的模型结构示意图，
+一个LSTM网络结构就和RNN一样有隐层的递归的自环，其中每个隐层单元被替换成了具有长短时记忆功能的LSTM单元。
+在后文中，LSTM记忆单元被统一表示成$\mathcal{L}$。另外为了避免混淆，标注模型和语言模型的LSTM记忆单元分别被表示成 $\mathcal{L}_{\tt{tag}}$和$\mathcal{L}_{\tt{LM}}$。
+
+
+
+向量$\bm{w}_t$使用one hot编码来表示当前时刻$t$的当前词，这个one hot向量也同时是$\mathcal{L}_{\tt{tag}}$和$\mathcal{L}_{\tt{LM}}$.
+
+接下来，这个词的此嵌套$\bm{x}_t$可以这样得到:
+	\begin{equation}
+    \bm{x}_t = E_{tag}\bm{w}_t
+	\end{equation}
+这里$E_{tag}$ 是指标注模型的词嵌套矩阵。    
+
+单向LSTM标注模型的输出层 $\bm{h}_t$ 由下述公式计算得到:  
+	\begin{equation}
+    \bm{h}_t = \mathcal{L}_{\tt{tag}}(\bm{x}_t,\bm{h}_{t-1})
+	\end{equation}
+其中LSTM计算单元$\mathcal{L}$内部的详细的函数表达式如公式ref{eq:memoryb}所展示的这样:
+
+其中 $\sigma$ 是逻辑函数 (sigmoid)， 以及$i$, $f$, $o$ and $c$ 分别表示 \textit{input gate}、 \textit{forget gate}、 \textit{output gate} and \textit{cell} 激励向量.
+
+
+
+$\bm{f}_t$ 是标注模型的输出，这是个总和为$1$的向量,表示输出的标注分类的概率分布， 同样的它可以根据模型的隐层LSTM记忆单元求得，公式如下：
+	\begin{equation}
+    \bm{f}_t = softmax(W_{ho}\bm{h}_{t}+\bm{b}_y)
+	\end{equation}	
+其中softmax是归一化函数，目的是让概率分布总和为1.
+
+
+
+
+ %and vector $\mathbf{s}(t-1)$ represents the hidden layer output in the previous time step.
+根据截止到目前所描述的LSTM-RNN语言模型，观测到的每个时刻的模型的输出概率分布和其它时刻是相互独立的，仅仅根据数据训练得出。
+然而，在有些任务中，比如说NER和Chunking任务中，标注之间具有一些隐含的规则，它们之间和前后的标注具有强关联性。其中一部分种类仅仅能存在在部分特定的种类之后，而一部分不能存在于某些之后。比如说NN-B（名字块开头）后面不可能跟VV-E（动词块）结尾，加了类似于这些规则之后标注模型的准确率会有一定的提升。
+
+
+\begin{figure}[h]
+\small
+\centering
+\input{pic/graph.sysflow.tex}
+\caption{LSTM tagging system with decoding}\label{sysflow}
+\end{figure}
+
+正如图\ref{sysflow}所示，为了将上述的标注之间的约束关系利用起来，
+我们在每一步中引入转化矩阵的概念，如果两个标注类别之间可以连接，则矩阵为1，否则为0。矩阵是单向的，比如B能在A后面出现，则$matrix[A][B]=0$，而B不一定能在A之前出现，若不能则$matrix[B][A]=0$。
+这个矩阵和标注模型的概率分布一起进行解码\cite{Wang2015A}，便能得到概率最大的标注序列。 
+这个解码过程可以用经典的Viterbi算法\cite{Andrew1967Viterbi}完成。
+
+在本文中，解码过程被表示成$\mathcal{D}(\cdot)$，
+解码过程的输出$\mathbf{\tau}_t$ 是一系列最终预测得到的标注序列，它们同样用one hot向量表示如下：
+
+	\begin{equation}
+    \bm{\tau}_t = \mathcal{D}(\bm{f}_t)
+	\end{equation}
+
+到此我们可以发现，标注模型的输出传到语言模型中可以有两种表示：第一种是概率分布的序列，第二种是经过Viterbi解码后得到的确切的one hot序列。
+
+
+
+\subsubsection{Multi-view LSTM language model with word-synchronized auxiliary feature}
+\label{sec:psd-ac-conf}
+图\ref{fig:selfpos} 展现了我们的仅用前文辅助信息的Multi-view LSTM语言模型架构。
+
+  \begin{figure}[tbhp!]
+    \small
+    \centering
+     \includegraphics[width=\linewidth]{pic/selfpos.pdf}
+    \caption{{\it multi-view LSTM  language model with word-synchronized auxiliary feature}}
+    \label{fig:selfpos}
+  \end{figure}
+
+
+我们提出的模型是一个和单向标注模型连接起来的Multi-view语言模型。
+
+语言模型的第一个输入 $\bm{w}_t$ 是一个代表当前词的one hot向量 , 这个向量同时也是标注模型的输入。
+第二个输入是标注模型部分的输出，可以是经过Viterbi解码之后的ont序列，也可以是直接的概率分布。
+无论这个解码过程有没有进行，我都对于两者都在第四章的实验部分进行了实验与比较。
+它们的不同点也体现在输入部分的公式上，
+如果使用了Viterbi解码，语言模型的第二个输入将会是：
+	\begin{equation}
+\bm{\zeta}_t=W_{tag}\bm{\tau}_t + E_{word}\bm{w}_t 
+	\end{equation}
+其中$\bm{\tau}_t$ 是解码部分输出的one hot向量。
+否则，语言模型的输入是:
+	\begin{equation}
+\bm{\zeta}_t=W_{tag}\bm{f}_t +  E_{word}\bm{w}_t 
+	\end{equation} 
+其中$\bm{f}_t$ 是标注模型的概率分布形式的输出。
+$E_{word}$ is 是词嵌套矩阵，$W_{tag}$ 是标注模型到语言模型的隐层之间的参数矩阵。它们将会在每个时序点被加起来作为语言模型最终的输入。
+
+
+
+%The same as tagging model, as $\bm{\sigma}_t$ is the input of $\mathcal{L}_{\tt{LM}}$.
+LSTM语言模型的隐层的输出为 $\bm{h}_t$，它的计算公式是： 
+	\begin{equation}
+    \bm{h}_t = \mathcal{L}_{\tt{LM}}(\bm{\zeta}_t,\bm{h}_{t-1})
+	\end{equation}
+LSTM记忆快的具体函数 $\mathcal{L}$ 的公式已经在上一小节介绍过了。
+$\bm{y}_{t}$ 是语言模型的输出，
+表示预测的下一个词的概率分布$P(\bm{x}_{t+1}|\bm{x}_1\mathord{:}\bm{x}_t)$, 
+它同样根据LSTM隐层单元得到，公式如下： 
+	\begin{equation}
+    \bm{y}_{t} = softmax(W_{ho}\bm{h}_{t}+\bm{b}_y)
+	\end{equation}	
+    
+上述就我我们单向自信息Multi-view语言模型的结构描述。
+    
+\subsection{五种训练方法}
+我们提出的模型由两部分组成：标注模型和语言模型。
+语言模型训练过程遵循标准约定，先计算每个单词的交叉熵，然后进行反向传播。
+我们采用基于小批量的随机梯度下降法(SGD)作为优化方法。
+但是由于语言模型和标注模型的连接方式的不同，我们尝试了五种不同的训练方法，并进行实验和比较。
+五种训练方式如下：
+
+1) 将LSTM标记模型作为一个独立的模型进行训练，在训练多视角语言模型时将标注模型固定，并不继续进行训练更新。五种方式中只有这种方法才能利用解码过程，因为后面的方法需要训练标注模型，但解码过程出来的结果是确定的值，无论是解码还是采样过后都不支持将误差从语言模型传递到标注模型，从而不支持继续训练标注模型。其优势在于，解码器有利于提升标注模型，但它的缺点是在语言模型训练时标注模型不能更新。
+
+2)提前对LSTM标注模型进行训练，不同于第一种方法，这种方法中标注模型也会在训练语言模型的时候进行训练和更新，此时标注模型的输出是以概率分布的形式输入到语言模型中。标注模型的学习率下降速度和语言模型保持一致。这个方法有个致命缺点是：训练好的标注模型会因为不恰当的学习率在训练语言模型的时候训毁。
+
+3)并不事先训练好标注模型，而是对其进行随机初始化，然后整个系统——标注模型和语言模型部分一起记性训练，使用相同的学习率。 
+
+
+4)第三种和第四种方式都是实用的相同学习率，本方法在第二种训练方法的基础上，采用学习率稳定算子$\beta$自适应算法 \cite{Ghahremani2016Self}\cite{Liu2016investigation} 进行模型的更新，目的是为了合理的调整学习旅使得在不同的模型部分使用适合于它自己的学习率。比如第二种方法中标注模型是事先训练好的， 调整幅度就应该非常小。 
+
+5)与第四种方式相似， 这个方法是在第三种方法的基础上加入稳定算子$\beta$自适应算法。
+
+由于我们所提出的模型的最佳训练方法是未知的，所以这五种方法都在实验中进行了测试和评估。结果如第4章实验部分所示。
+
+
+
+\section{teacher-student语言模型}
+
+\subsection{teacher-student模型结构}
+\subsection{几种不同的教的方式}
+\subsection{teacher-student语言模型的应用}
+
+
+
+
+
+
+%\bibliographystyle{IEEEbib}
+%\bibliography{refs.bib}
+\begin{thebibliography}{1}
+%
+
+\bibitem {katz1987estimation}
+Slava Katz:
+Estimation of probabilities from sparse data for the language model component of a speech recognizer. 
+IEEE transactions on acoustics, speech, and signal processing, vol. 35, no. 3, 400–-401 (1987)
+
+\bibitem {mikolov2010recurrent}
+Mikolov, Tom{\'a}{\v{s}} and Karafi{\'a}t, Martin and Burget, Luk{\'a}{\v{s}} and {\v{C}}ernock{\`y}, Jan and Khudanpur, Sanjeev: 
+Recurrent neural network based language model.
+INTERSPEECH, Conference of the International Speech Communication Association, Makuhari, Chiba, Japan, September DBLP, 1045-1048 (2010)
+
+\bibitem {mikolov2011extensions}
+Mikolov, Tom{\'a}{\v{s}} and Kombrink, Stefan and Burget, Luk{\'a}{\v{s}} and {\v{C}}ernock{\`y}, Jan and Khudanpur, Sanjeev:
+Extensions of recurrent neural network
+language model.
+IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 5528–-5531 (2011)
+
+\bibitem {Hochreiter1997Long}
+Hochreiter, Sepp and Schmidhuber, J¨¹rgen:
+Long short-term memory.
+Neural Computation, vol.9, col.8, 1735–-1780 (1997)
+
+\bibitem {sundermeyer2012lstm}
+Sundermeyer, Martin and Schl{\"u}ter, Ralf and Ney, Hermann:
+Lstm neural networks for language modeling. 
+INTERSPEECH, vol.31, 194–-197 (2012)
+
+\bibitem {shi2012towards}
+Yangyang Shi, Pascal Wiggers, and Catholijn M Jonker:
+Towards recurrent neural networks language models with linguistic and contextual features. 
+INTERSPEECH, vol.48 1664–-1667 (2012)
+
+\bibitem {Tjong2000Introduction}
+Tjong Kim Sang, F Erik, Buchholz, and Sabine:
+Introduction to the CoNLL-2000 shared task: chunking.
+The Workshop on Learning Language in Logic and the Conference on Computational Natural Language Learning, 127–-132 (2000)
+
+
+\bibitem {shi2015integrating}
+Yangyang Shi, Martha Larson, Joris Pelemans, Catholijn M Jonker, Patrick Wambacq, Pascal Wiggers, and Kris Demuynck:
+Integrating meta-information into recurrent neural network language models.
+Speech Communication,  vol.73, 64–-80 (2015)
+
+
+
+\bibitem {Collobert2008A}
+Ronan Collobert and Jason Weston:
+A unified architecture for natural language processing: deep neural networks with multitask learning.
+International Conference, 160–-167 (2008)
+
+\bibitem {Liu2016Joint}
+Bing Liu and Ian Lane:
+Joint Online Spoken Language Understanding and Language Modeling with Recurrent Neural Networks.
+IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 160–-167 (2016)
+
+\bibitem {schmid1994part}
+Helmut Schmid:
+Part-of-speech tagging with neural networks.
+Proceedings of the 15th conference on Computational linguistics-Volume 1. Association for Computational Linguistics,  172–-176 (1994)
+
+
+\bibitem {Wang2015A}
+Peilu Wang, Yao Qian, Frank K. Soong, Lei He, and Hai Zhao:
+A unified tagging solution: Bidirectional lstm recurrent neural network with word embedding.
+Computer Science (2015)
+
+\bibitem {Andrew1967Viterbi}
+Andrew.J. Viterbi:
+Error bounds for convolutional codes and an asymptotically optimum decoding algorithm. 
+Information Theory, IEEE Transactions
+, 260–-269 (1967)
+
+\bibitem {Ghahremani2016Self}
+Pegah Ghahremani and Jasha Droppo. 
+Self-stabilized deep neural network.
+IEEE International Conference on Acoustics, Speech and Signal Processing, 5450–-5454 (2016)
+
+
+\bibitem {Liu2016investigation}
+Liu Qi, Tan Tian, and Yu Kai:
+An investigation on deep learning with beta stabilizer.
+IEEE International Conference on Signal Processing, 557–-561 (2017)
+
+
+\bibitem {Taylor2003The}
+Ann Taylor, Mitchell Marcus, and Beatrice Santorini:
+The Penn Treebank: An Overview.
+Springer Netherlands, vol.20, 5--22(2003)
+
+
+\bibitem {stolcke2002srilm}
+Andreas Stolcke et al.:
+Srilm-an extensible language modeling toolkit.
+International Conference on Spoken Language Processing, 901--904 (2002)
+
+\bibitem {Toutanova2000Enriching}
+Kristina Toutanova and Christopher D. Manning:
+Enriching the knowledge sources used in a maximum entropy part-of-speech tagger.
+Joint Sigdat Conference on Empirical Methods in Natural Language Processing and Very Large Corpora: Held in Conjunction
+with the Meeting of the Association for Computational Linguistics, 63–-70 (2000)
+
+\end{thebibliography}
+\end{document}

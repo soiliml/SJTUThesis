@@ -1,15 +1,24 @@
 [0] Config.pm:354> INFO - This is Biber 2.7
 [0] Config.pm:357> INFO - Logfile is 'thesis.blg'
-[44] biber-darwin:303> INFO - === 四 12  7, 2017, 18:23:44
-[70] Biber.pm:359> INFO - Reading 'thesis.bcf'
-[203] Biber.pm:835> INFO - Found 17 citekeys in bib section 0
-[217] Biber.pm:3670> INFO - Processing section 0
-[233] Biber.pm:3840> INFO - Looking for bibtex format file 'bib/thesis.bib' for section 0
-[237] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
-[245] bibtex.pm:1292> INFO - Found BibTeX data source 'bib/thesis.bib'
-[321] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[321] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[321] Biber.pm:3499> INFO - Sorting list 'none/global/' of type 'entry' with scheme 'none' and locale 'en-US'
-[321] Biber.pm:3505> INFO - No sort tailoring available for locale 'en-US'
-[332] bbl.pm:608> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
-[335] bbl.pm:712> INFO - Output to thesis.bbl
+[55] biber-darwin:303> INFO - === 三 12 27, 2017, 20:50:46
+[94] Biber.pm:359> INFO - Reading 'thesis.bcf'
+[250] Biber.pm:835> INFO - Found 42 citekeys in bib section 0
+[276] Biber.pm:3670> INFO - Processing section 0
+[309] Biber.pm:3840> INFO - Looking for bibtex format file 'bib/thesis.bib' for section 0
+[314] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
+[324] bibtex.pm:1292> INFO - Found BibTeX data source 'bib/thesis.bib'
+[327] Utils.pm:164> WARN - Duplicate entry key: 'brown1992class' in file 'bib/thesis.bib', skipping ...
+[329] Utils.pm:164> WARN - Duplicate entry key: 'mikolov2010recurrent' in file 'bib/thesis.bib', skipping ...
+[329] Utils.pm:164> WARN - Possible typo (case mismatch) between datasource keys: 'Hochreiter1997Long' and 'hochreiter1997long' in file 'bib/thesis.bib'
+[330] Utils.pm:164> WARN - Possible typo (case mismatch) between datasource keys: 'Ghahremani2016Self' and 'ghahremani2016self' in file 'bib/thesis.bib'
+[330] Utils.pm:164> WARN - Possible typo (case mismatch) between datasource keys: 'Liu2016investigation' and 'liu2016investigation' in file 'bib/thesis.bib'
+[548] Utils.pm:164> WARN - I didn't find a database entry for 'Liu2016Joint' (section 0)
+[548] Utils.pm:164> WARN - I didn't find a database entry for 'Andrew1967Viterbi' (section 0)
+[548] Utils.pm:164> WARN - I didn't find a database entry for 'Taylor2003The' (section 0)
+[589] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[589] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[589] Biber.pm:3499> INFO - Sorting list 'none/global/' of type 'entry' with scheme 'none' and locale 'en-US'
+[590] Biber.pm:3505> INFO - No sort tailoring available for locale 'en-US'
+[643] bbl.pm:608> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[654] bbl.pm:712> INFO - Output to thesis.bbl
+[654] Biber.pm:109> INFO - WARNINGS: 8

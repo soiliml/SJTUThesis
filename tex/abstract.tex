@@ -5,22 +5,38 @@
 
 \begin{abstract}
 
-最近，自动语音识别（ASR）和自然语言处理（NLP）的研究推动了语言模型的发展。其中，循环神经网络语言模型（RNNLM）由于其存在特殊的环状结构，使得训练过程中的历史信息可以被记录并作用于当前单词的训练，而比N-gram等传统语言模型表现更佳。近几年，Mikolov等人证明在训练语言模型时加入额外信息同原始数据一起训练能有效提高语言模型的性能，然而引入的信息过于单调，也没有针对中文做研究。因此本文从多视角融合的角度针对中文去考虑。
+最近，长短时间变化神经网络语言模型（LSTM LM）因为它的记忆单元出色的对历史信息的记忆能力，得到了语言和语音学者广泛的关注。
+对语言模型进行一系列的结构优化可以使其在自动语音识别任务中表现得更好。
+本文首先针对语言模型的结构化特性进行学习率自适应的研究，
+获得最好的调整方法，成功使得语言模型的不同结构能自动调整学习率，为后面研究工作打好基础。
+接着，由于将辅助信息(如上下文特性)加入到LSTM LM中，能在语言模型的混淆度(PPL)中体现出比较大的语言模型的性能提升。
+然而，在大量的词汇连续语音识别(LVCSR)任务中，辅助信息的不恰当的输入不会使单词错误率(WER)获得同样的增益。
+为了解决这一问题，本文提出了一种多视角融合的LSTM语言模型结构。首先建立了一种在线单向lstm作为一种标记模型，可以生成词同步的辅助信息特征。
+然后将标记模型的辅助特征与单词序列结合起来，训练多视角单向LSTM语言模型。研究并比较了不同的标记模型和语言模型的训练模式。
+在英文数据集PTB、Fisher和中文短信S数据集上对新架构进行了评价，结果表明，新的模型结构不仅能够提升混淆度，也能减小语音识别任务中的词错误率和句子错误率。
+除此之外，本文将教师-学生模型引入到语言模型中，
+探究多种模型之间的教授方式，并最终能大幅度提升小语言模型的性能。
 
-因为语言本身具有一些约束特性，如单词的识别会依赖于词性的连接规律、话题的约束和场景地点的区分等。本文首先将数据集预处理，分别通过对应的算法得到数据对应的词性、话题和场景等不同的信息，并进行标注得到新的数据集。然后，以词为单位对带标记的数据进行解析，得到其词向量和对应信息的特征向量。最后将这些向量一同作为RNNLM的输入层进行训练。通过多组对比实验可以发现，多视角融合的RNNLM相比于传统的RNNLM在各类数据上均有8%左右的perplexity性能提升，在ASR的实验中也表现出了显著提高。
 
-在这篇论文中，我们将首先介绍语言模型的基本概念和传统的语言模型；然后介绍RNNLM的结构和训练流程，以及其关键数学理论基础；接着会详细说明多视角融合的RNNLM视角提取量化，以及训练框架和原理；最后展示和讨论实验结果。
-
-\keywords{\large 关键词： \quad 自动语音识别 \quad 语言模型 \quad 神经网络 \quad 多视角语言模型}
+\keywords{\large 关键词： \quad 自动语音识别 \quad 语言模型 \quad 神经网络 \quad 多视角语言模型 \quad 学习率自适应 \quad 教师-学生模型}
 \end{abstract}
 
 \begin{englishabstract}
-Recently， research in automatic speech recognition （ASR） and natural language processing （NLP） promotes the development of language model. Among them， the RNN （recurrent neural network） language model which has special ring structure can record the history of training and use it in current training， thus performing better than traditional language model， for instance， N-gram language model. Mikolov demonstrates that the performance of language model can be effectively improved by combining the original data with additional information. However the information they used is quite simple，and also don’t aim at Chinese. our work will focus on an advanced method which is combine different views and aimed at Chinese.
-
-The constraints features of the language can help the training process of language model in neural network judge better. For example， word recognition depends on the connection rule of POS（part-of-speech）， the constraints of topic，the scene distinction and location. First we preprocess the data set and obtain the information about POS， constraints of topic and scene distinction by using the corresponding algorithm. And we present a new data set by marking the information. Then parsing the marked data measured in word and obtain word vector and feature vector of corresponding information. After that we take these vectors as the input layer of RNN language model for training. By comparing multiple sets of experiments， multi-view RNN language model has 8% of improvement in perplexity performance on all kinds of data compared with the traditional RNN language model. The experiment of ASR also indicates significant improvement.
-
-In this paper， we introduce the basic concept of language model and traditional  language model， explain the structure of the RNN language model， expand the training process and the mathematical theory. Then we illustrate the process of view extraction，  quantification and training framework with the principle in multi-view RNN language model. Finally we present and discuss the results of experiment for futher exploration.
-
-\englishkeywords{\large SJTU, master thesis, XeTeX/LaTeX template}
+Recently long short-term memory language model (LSTM LM) has received tremendous interests from both language and speech communities, 
+due to its superiorty on modelling long-term dependency. 
+A series of structural optimizations to the language model can make it perform better in auto speech recognition tasks.
+In this paper, we firstly concern learning rate adaption task aiming at the structural characteristics of the language model.
+The best adjustment method is obtained, which enables the different structure of language model to automatically adjust the learning rate and lay a foundation for the research work in the future.
+Later, because integrating auxiliary information, 
+such as context feature, into the LSTM LM has shown improved performance in perplexity (PPL). 
+However, improper feed of auxiliary information won't give consistent gain on word error rate (WER) in a large vocabulary continuous speech recognition (LVCSR) task. 
+To solve this problem, a multi-view LSTM LM architecture combining a tagging model is proposed in this paper.
+ Firstly an on-line unidirectional LSTM-RNN is built as a tagging model, which can generate word-synchronized auxiliary feature. 
+Then the auxiliary feature from the tagging model is combined with the word sequence to train a multi-view unidirectional LSTM LM. 
+Different training modes for the tagging model and language model are explored and compared. The new architecture is evaluated on PTB, 
+Fisher English and SMS Chinese data sets, and the results show that not only LM PPL promotion is observed, but also the improvements can be well transferred to WER reduction in ASR-rescore task.
+In addition, this paper introduces the teacher - student model into the language model.
+Explore the way of teaching among various models and ultimately improve the performance of small language models.
+\englishkeywords{\large ASR, language model, neural network, multi-view, learning rate adaptation, teacher-student model}
 \end{englishabstract}
 

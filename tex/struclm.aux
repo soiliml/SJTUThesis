@@ -1,18 +1,54 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
 \FN@pp@footnotehinttrue 
-\@writefile{toc}{\contentsline {chapter}{\numberline {第三章\hspace  {.3em}}结构化语言模型的研究}{5}{chapter.3}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {第四章\hspace  {.3em}}面向ASR的结构化单向辅助信息Multi-view语言模型}{27}{chapter.4}}
 \@writefile{lof}{\addvspace {10.0pt}}
 \@writefile{lot}{\addvspace {10.0pt}}
-\newlabel{chap:struclm}{{三}{5}{结构化语言模型的研究}{chapter.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Multi-task语言模型}{5}{section.3.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Multi-view语言模型}{5}{section.3.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Joint-train语言模型}{5}{section.3.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}teacher-student语言模型}{5}{section.3.4}}
+\newlabel{chap:struclm}{{四}{27}{面向ASR的结构化单向辅助信息Multi-view语言模型}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}现有结构化语言模型研究及现状}{27}{section.4.1}}
+\newlabel{sec:struclm}{{4.1}{27}{现有结构化语言模型研究及现状}{section.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}multi-task语言模型}{27}{subsection.4.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Multi-task语言模型}{27}{subsection.4.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}multi-task模型结构}{27}{subsection.4.1.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.4}multi-task语言模型的表现}{27}{subsection.4.1.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.5}Multi-view语言模型}{27}{subsection.4.1.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4--1}{\ignorespaces {\it  (a)Multi-view LSTM语言模型. (b)Multi-task LSTM语言模型. (c)Joint train LSTM语言模型.}}}{28}{figure.4.1}}
+\newlabel{fig:LSTM}{{4--1}{28}{\it (a)Multi-view LSTM语言模型. (b)Multi-task LSTM语言模型. (c)Joint train LSTM语言模型}{figure.4.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.5.1}multi-view语言模型的结构}{28}{subsubsection.4.1.5.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.5.2}multi-view的多视角特征信息介绍}{28}{subsubsection.4.1.5.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.5.3}multi-view语言模的表现}{28}{subsubsection.4.1.5.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.6}Joint-train语言模型}{28}{subsection.4.1.6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.6.1}Joint-train语言模型结构}{28}{subsubsection.4.1.6.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.7}研究动机和思路}{28}{subsection.4.1.7}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}单向辅助信息模型的辅助信息选取}{29}{section.4.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}词性标注}{29}{subsection.4.2.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4--2}{\ignorespaces 词性标注任务输入输出示例}}{29}{figure.4.2}}
+\newlabel{fig:fpossample}{{4--2}{29}{词性标注任务输入输出示例}{figure.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}命名实体识别}{30}{subsection.4.2.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4--3}{\ignorespaces 命名实体识别任务输入输出示例}}{30}{figure.4.3}}
+\newlabel{fig:nersample}{{4--3}{30}{命名实体识别任务输入输出示例}{figure.4.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}语法块标注}{30}{subsection.4.2.3}}
+\@writefile{lot}{\contentsline {table}{\numberline {4--1}{\ignorespaces IOB，IOE，IOBES标注策略比较}}{31}{table.4.1}}
+\newlabel{table.tagscheme}{{4--1}{31}{IOB，IOE，IOBES标注策略比较}{table.4.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4--4}{\ignorespaces IOBES标注策略输出与切分示例}}{31}{figure.4.4}}
+\newlabel{fig.tagschemesample}{{4--4}{31}{IOBES标注策略输出与切分示例}{figure.4.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4--5}{\ignorespaces 语块切分任务输入输出示例}}{31}{figure.4.5}}
+\newlabel{fig.chunksample}{{4--5}{31}{语块切分任务输入输出示例}{figure.4.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}单向辅助信息的Multi-view语言模型结构}{32}{section.4.3}}
+\newlabel{Multi-view}{{4.3}{32}{单向辅助信息的Multi-view语言模型结构}{section.4.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}单向LSTM标注模型部分}{32}{subsection.4.3.1}}
+\newlabel{sec:psd-ac-conf}{{4.3.1}{32}{单向LSTM标注模型部分}{subsection.4.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4--6}{\ignorespaces {\it  uni-directional LSTM tagging model}}}{32}{figure.4.6}}
+\newlabel{fig:tagging}{{4--6}{32}{\it uni-directional LSTM tagging model}{figure.4.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Multi-view语言模型部分}{33}{subsection.4.3.2}}
+\newlabel{sec:psd-ac-conf}{{4.3.2}{33}{Multi-view语言模型部分}{subsection.4.3.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4--7}{\ignorespaces {\it  multi-view LSTM language model with word-synchronized auxiliary feature}}}{34}{figure.4.7}}
+\newlabel{fig:selfpos}{{4--7}{34}{\it multi-view LSTM language model with word-synchronized auxiliary feature}{figure.4.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}模型的训练方法}{34}{section.4.4}}
 \FN@pp@footnotehinttrue 
 \@setckpt{tex/struclm}{
-\setcounter{page}{6}
-\setcounter{equation}{0}
+\setcounter{page}{36}
+\setcounter{equation}{9}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
@@ -20,14 +56,14 @@
 \setcounter{footnote}{0}
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
-\setcounter{chapter}{3}
+\setcounter{chapter}{4}
 \setcounter{section}{4}
 \setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{0}
-\setcounter{table}{0}
+\setcounter{figure}{7}
+\setcounter{table}{1}
 \setcounter{StandardModuleDepth}{0}
 \setcounter{parentequation}{0}
 \setcounter{subfigure}{0}
@@ -44,7 +80,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{0}
+\setcounter{instcount}{51}
 \setcounter{maxnames}{3}
 \setcounter{minnames}{3}
 \setcounter{maxitems}{3}
@@ -143,12 +179,12 @@
 \setcounter{bbx:relatedcount}{0}
 \setcounter{bbx:relatedtotal}{0}
 \setcounter{cbx@tempcnta}{0}
-\setcounter{cbx@tempcntb}{0}
+\setcounter{cbx@tempcntb}{37}
 \setcounter{lstnumber}{1}
 \setcounter{Item}{0}
 \setcounter{Hfootnote}{0}
 \setcounter{Hy@AnnotLevel}{0}
-\setcounter{bookmark@seq@number}{34}
+\setcounter{bookmark@seq@number}{50}
 \setcounter{LT@tables}{1}
 \setcounter{LT@chunks}{3}
 \setcounter{pp@next@reset}{1}

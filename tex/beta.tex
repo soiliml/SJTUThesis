@@ -1,0 +1,161 @@
+%# -*- coding: utf-8-unix -*-
+%%==================================================
+%% chapter01.tex for SJTU Master Thesis
+%%==================================================
+
+%\bibliographystyle{sjtu2}%[此处用于每章都生产参考文献]
+
+\chapter{面向结构化语言模型的学习率自适应研究}
+\label{chap:beta}
+
+
+
+
+\title{面向结构化语言模型的学习率自适应研究}
+
+\section{研究动机和研究意义}
+前一章介绍了循环神经网络（RNN）和加入长短时间记忆单元（LSTM）语言模型。
+
+在神经网络的训练过程中，学习率是一个重要并且敏感的参数，需要用到先验知识和进行大量实验去找到符合特定模型的最优学习率才能得到最优解。在过去的研究中，在\cite{ghahremani2016self}中提出了在DNN模型中采用学习率的自适应算法，能够降低模型对初始学习率的敏感度和提升收敛速度。在此基础上，这个算法被应用到LSTM循环神经网络声学模型中\cite{liu2016investigation}，虽然可以一定程度上降低对初始学习率的敏感度和收敛速度，却会牺牲掉一部分性能，效果并不理想。
+
+在语言模型中引入稳定算子beta进行初始学习率的自适应能够很大幅度忽略初始学习率对结果的影响；同时，稳定算子能够较大幅度提升语言模型的收敛速度，有效减少不必要的训练时间；在多种LSTM语言模型引入稳定算子的算法中，每个隐层的参数分别拥有自己独立的稳定算子会使结果更优。
+
+尤其是在本文的主要工作——结构化语言模型的研究中，不同的结构的特点和任务不一样，会有主次之分，也会有部分经过预训练的情况。用相同的学习率往往会使结果达不到预期。
+因此动态的调整不同结构中的学习率至关重要。本人也对传统DNN上的$\beta$	稳定算子方法做了相应的优化，将其在LSTM语言模型中进行实现、测试。最后证实有效并应用于结构化语言模型的研究。
+
+在此部分的工作中，我们将学习率的自适应算法应用在语言模型中，后文统一称为引入稳定算子beta，在训练中动态调整beta以达到自适应学习率的目的。我们在不同的语言模型网络结构中尝试加入稳定算子，探究其对训练结果、收敛速度、初始学习率的敏感程度上的影响。同时，我们参考各机器学习工具的RNN实现中，往往会通过对参数加入L2范数优化以达到避免过拟合、提升模型性能的目的，对稳定算子加入L2范数，研究优化后的模型性能。
+
+
+\section{随机梯度下降法和学习率}
+
+神经网络模型的训练开始用的是批梯度下降这种最优化求解方法。因为训练速度过慢而采用随机梯度下降法（SGD）\cite{lecun1998efficient}。随机梯度下降（SGD）是一种常用的最优化问题求解方法，然而该方法依然存在迭代次数过多以及搜索盲目的问题。而小批量随机梯度下降（Mini-batch SGD，MBGD）能够折衷训练时间和训练效果，更是广泛地被用于各类神经网络的训练中\cite{konevcny2016mini}。
+
+下面我们介绍一下小批量随机梯度下降的数学原理和理论过程。
+训练目标是更新神经网络中的参数$\theta$，首先根据损失函数$L$ 计算出每个参数$\theta_i$对应的梯度为公式\ref{eq:deltai}，
+\begin{equation}
+	\label{eq:deltai}
+   	{\Delta _i} = \frac{{\partial L}}{{\partial {\theta _i}}}
+\end{equation} 
+
+根据梯度和学习率对该参数更具公式\ref{eq:theta}进行更新
+\begin{equation}
+	\label{eq:theta}
+   	{\theta_i} = {\theta_i} - \eta {\Delta_i}
+\end{equation} 
+	 
+其中$\eta$是学习率，即通俗意义上的步长。
+
+学习率 α 在训练过程中需要根据某个训练策略进行调整。在我们的实验中，一般都 会使用一个开发集数据(development set)来观察训练结果。接着，一开始我们会使用 较大的学习率，然后如果在开发集上经过一轮训练后性能不再提升，我们就会开始进行改变学习率。
+一个需要调整的配置是 mini-batch 的大小，mini-batch 大小大的话，因为并行度的 提高，训练速度会提高，但是更新次数少了的话可能导致训练收敛减慢。另外，如果把 mini-batch 设小了，因为并行度的减小，训练速度变慢，这对我们用户来说也是不太可 以接受的，总的来说，需要选择一个适中的值。一般来说，一个大小为 10 到 50 的 mini-batch 的大小都会在实践中使用。
+
+实际训练中，学习率会随着训练的进行变化，调整学习率的方法有好几种，目前用的比较多的两种是提前停止法\cite{yao2007early}和减半法\cite{goodfellow2016deep}。提前停止法是当某一轮监督集上的结果变差了即停止训练。减半法是当某一轮的监督集上的结果变差时将学习率减半，继续进行训练。
+
+	但无论是哪一种调整学习率的方法，都对初始学习率的值非常敏感，学习率太大会导致无法收敛，学习太小同样会导致无法收敛或者收敛速度过慢。并且不同的初始学习率可能会对总的学习轮数影响较大，不同任务的合理的初始学习率也各不相同，为了得到合理的初始学习率，需要做大量的试验。因此为了减少甚至消除初始学习率对试验结果的影响，弱化掉选取初始学习率这一过程，关于在训练算法中加入稳定算子来进行学习率的自适应的算法应运而生。本文着重研究在LSTM语言模型中加入稳定算子的影响，并对其进行L2范数以达到优化目的。
+    
+
+\section{稳定算子Beta及自适应}   
+在微软的研究中，提出引入稳定算子进行模型学习率的自适应，使得神经网络对于学习率的敏感度降低，将研究人员从调整学习率的繁琐重复工作中解放出来。具体方法是为DNN神经网络中每一层配备一个稳定算子beta。普通的DNN隐层的矩阵计算公式为\ref{eq:y}
+
+\begin{equation}
+	\label{eq:y}
+   	y = Wx + b
+\end{equation} 	 
+其中x是输入向量，y是输出向量，W是现行变化参数矩阵，b是偏移系数向量。
+加入beta稳定算子后的矩阵公式为公式\ref{ye}，
+
+\begin{equation}
+	\label{eq:ye}
+   	y = {e^\beta }Wx + b
+\end{equation} 
+
+$e$是自然对数， 是稳定算子。
+加入$\beta$后的模型训练过程中，前向传播可以直接按照上述公式进行，但是在反向传播训练的过程中，需要计算$x$，$W$，$b$和$\beta$的梯度。
+其中x和W的梯度进行了小幅度修改，$b$的梯度没有改变，如公式\ref{eq:Lx}所示
+
+\begin{equation}
+	\label{eq:Lx}
+   	\begin{split}
+\frac{{\partial L}}{{\partial x}} = {e^\beta }{W^{\rm T}}\frac{{\partial L}}{{\partial y}},\\
+\frac{{\partial L}}{{\partial W}} = {e^\beta }\frac{{\partial L}}{{\partial y}}{x^{\rm T}},\\
+\frac{{\partial L}}{{\partial b}} = \frac{{\partial L}}{{\partial y}}
+\end{split}
+\end{equation} 	 
+
+剩下的问题是如何更新$\beta$呢，根据求导的链式法则有公式\ref{eq:Lx‘}
+
+\begin{equation}
+	\label{eq:Lx‘}
+   	\frac{{\partial L}}{{\partial x}} = \frac{{\partial L}}{{\partial y}}\frac{{\partial y}}{{\partial \beta }} = {e^\beta }\frac{{\partial {L^{\rm T}}}}{{\partial y}}Wx
+\end{equation} 
+
+根据上面求$x$的梯度公式，可以得到公式\ref{eq:Lbeta}
+
+\begin{equation}
+	\label{eq:Lbeta}
+   	\frac{{\partial L}}{{\partial \beta }} = \frac{{\partial {L^{\rm T}}}}{{\partial x}}x
+\end{equation}
+
+故有公式\ref{eq:betaL}
+
+\begin{equation}
+	\label{eq:betaL}
+   	\beta  = \beta  - \eta \frac{{\partial {L^{\rm T}}}}{{\partial x}}x
+\end{equation} 
+
+\section{LSTM语言模型引入稳定算子}  
+
+LSTM是一种特殊的RNN网络，将原始的RNN网络的隐层单元替换为LSTM记忆单元，它不仅保留着RNN的记忆历史的功能，还能在记忆门的作用下动态调整记忆长短，如公式\ref{eq:memoryb}所示。
+
+\begin{equation}\label{eq:memoryb}
+\begin{split}
+i_t &= \sigma (W_{xi}x_t+W_{hi}h_{t-1}+W_{ci}c_{t-1}+b_i) \\
+f_t &= \sigma (W_{xf}x_t+W_{hf}h_{t-1}+W_{cf}c_{t-1}+b_f) \\
+c_t &= f_{t}c_{t-1}+i_{t}\tanh(W_{xc}x_t+W_{hc}h_{t-1}+b_c) \\
+o_t &= \sigma (W_{xo}x_{t}+W_{ho}h_{t-1}+W_{co}c_t+b_o) \\
+h_t &= o_t \tanh(c_t)
+\end{split}
+\end{equation}
+
+由微软提出的DNN网络中的学习率自适应方法适用于普通深度神经网络中的现行矩阵变换，然而无法直接应用于在LSTM网络中，因为在每个LSTM单元中，分别有三个门和一个仿射变换操作。因此在刘奇的研究中，主要比较了三种不同的方法：每层共享一个$\beta$，相同种类的门共享一个$\beta$，以及每个门的beta都各不相同。其中第三种方式中，每个$\beta$能够单独地分别调整每个参数矩阵，因而表现最好。该方法公式的修改如公式\ref{eq:blockbeta}：
+\begin{equation}\label{eq:blockbeta}
+\begin{split}
+{{\rm{i}}_t}&  =  \sigma {\rm{ ( }}{{\rm{e}}^{{\beta _{xi}}}}{{\rm{W}}_{xi}}{{\rm{x}}_t}{\rm{ +  }}{{\rm{e}}^{{\beta _{hi}}}}{{\rm{W}}_{hi}}{{\rm{h}}_{t - 1}}{\rm{ +  }}{{\rm{e}}^{{\beta _{ci}}}}{{\rm{W}}_{ci}}{{\rm{c}}_{t - 1}}{\rm{ +  }}{{\rm{b}}_i}{\rm{)}}\\
+{{\rm{f}}_t}&  =  \sigma {\rm{ ( }}{{\rm{e}}^{{\beta _{xf}}}}{{\rm{W}}_{xf}}{{\rm{x}}_t}{\rm{ +  }}{{\rm{e}}^{{\beta _{hf}}}}{{\rm{W}}_{hf}}{{\rm{h}}_{t - 1}}{\rm{ +  }}{{\rm{e}}^{{\beta _{cf}}}}{{\rm{W}}_{cf}}{\rm{ }}{{\rm{c}}_{t - 1}}{\rm{ +  }}{{\rm{b}}_f}{\rm{)}}\\
+{{\rm{c}}_t} &=  {{\rm{f}}_t} \cdot {\rm{ }}{{\rm{c}}_{t - 1}}{\rm{ +  }}{{\rm{i}}_t} \cdot {\rm{ tanh ( }}{{\rm{e}}^{{\beta _{xc}}}}{{\rm{W}}_{xc}}{{\rm{x}}_t}{\rm{ +  }}{{\rm{e}}^{{\beta _{hc}}}}{{\rm{W}}_{hc}}{{\rm{h}}_{t - 1}}{\rm{ +  }}{{\rm{b}}_c}{\rm{)}}\\
+{{\rm{o}}_t}&  =  \sigma {\rm{ ( }}{{\rm{e}}^{{\beta _{xo}}}}{{\rm{W}}_{xo}}{{\rm{x}}_t}{\rm{ +  }}{{\rm{e}}^{{\beta _{ho}}}}{{\rm{W}}_{ho}}{{\rm{h}}_{t - 1}}{\rm{ +  }}{{\rm{e}}^{{\beta _{co}}}}{{\rm{W}}_{co}}{{\rm{c}}_t}{\rm{ +  }}{{\rm{b}}_o}{\rm{)}}\\
+{{\rm{h}}_t}&  =  {{\rm{o}}_t} \cdot {\rm{ tanh ( }}{{\rm{c}}_t}{\rm{)}}
+\end{split}
+\end{equation}
+
+
+
+\section{稳定算子beta的L2norm范数} 
+在语言模型中，原始的损失函数为公式\ref{eq:Lori}，
+
+\begin{equation}
+	\label{eq:Lori}
+   	L\left( \theta  \right) =  - \sum\limits_{i = 1}^T {\log \left( {P\left( {s = {t_i}|{o_i}} \right)} \right)} 
+\end{equation} 
+
+目前在各机器学习框架的实现过程中，会对所有参数矩阵加入L2正则项优化，防止过拟合，使训练结果更好，加入L2优化后的损失函数为公式\ref{eq:Lnow}，
+
+\begin{equation}
+	\label{eq:Lnow}
+   	L\left( \theta  \right) =  - \sum\limits_{i = 1}^T {\log \left( {P\left( {s = {t_i}|{o_i}} \right)} \right)}  + \frac{\lambda }{2}||W|{|_2}
+\end{equation} 
+
+如前文所述，在前人工作中，稳定算子beta作为参数被加入到LSTM语言模型的训练中，并不改变损失函数。只是在更新beta的时候，把beta当做和其它参数一样求偏导数得到梯度，在学习率的控制下进行更新。本文在损失函数中为beta加上L2范数项，以达到优化的目的。加入稳定算子beta的L2正则项后的损失函数为\ref{eq:L2norm}。
+
+\begin{equation}
+	\label{eq:L2norm}
+   	{L_2}\left( \theta  \right) = L\left( \theta  \right) + \frac{{{\lambda _1}}}{2}||W|{|_2} + \frac{{{\lambda _2}}}{2}||{e^\beta }|{|_2}
+\end{equation} 
+
+
+这也是本文采用的方法。
+在加入稳定算子进行自适应的LSTM语言模型的训练过程中，别的参数的梯度求解方法和前面类似，包括beta在内的所有参数的更新方法，都是按照新的公式求解梯度，结合稳定算子和学习率进行更新。
+
+	关于此任务的所有实验和结果分析将会在第$4$章实验部分给出。最后得到的结论是稳定算子的引入对于普通语言模型和多任务语言模型来看在语言模型的性能上没有明显区别，并不像实验前预期的那样或许能智能调整不同任务的学习速度从而提升最后的训练结果，根据分析发现，这是因为多任务模型中为不同的任务分配权重已经可以达到不同任务学习速度不同的要求。另一方面，在参数量合理、没有超出训练数据的收敛极限的情况下，越深的网络，引入稳定算子的结果越好。
+	引入稳定算子的同时，在训练过程中对其加入L2正则优化会略微提升语言模型的性能，提升幅度大概1%，使beta收敛在一个比较小的值。
+
+

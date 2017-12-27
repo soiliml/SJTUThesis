@@ -1,0 +1,58 @@
+\tikzset{
+label/.style={
+  rectangle,
+  draw=none,
+  text centered,
+  inner sep=0em,
+},
+labelword/.style={
+  rectangle,
+  text width=3em,
+  align=center,
+  inner sep=0em,
+},
+tagmodel/.style={
+  rectangle,
+  draw,
+  text width=12em,
+  text centered,
+  minimum height=1.2em,
+  inner sep=0.1em
+},
+}
+
+\begin{tikzpicture}[x=1em, y=1em, >=stealth]
+%block1
+%outer block
+\node[label,text width=10em, align=left](t1) at (-6,-7) {\textbf{输入:}};
+\node[labelword](i1) at (-3.5,-7) {$w_1$};
+\node[labelword](i2) at (-3.5+3,-7) {$w_2$};
+\node[labelword](i3) at (-3.5+3+3,-7) {$w_3$};
+\node[labelword](i4) at (-3.5+3+3+3,-7) {$w_4$};
+\node[labelword](i5) at (-3.5+3+3+3+3,-7) {$\dots$};
+\node[labelword](i6) at (-3.5+3+3+3+3+3,-7) {$w_n$};
+
+\node[tagmodel](m1) at (3.5, -3.5) {标注模型};
+
+\node[label,text width=10em, align=left](t2) at (-6,0) {\textbf{输出:}};
+\node[labelword](o1) at (-3.5,0) {$t_1$};
+\node[labelword](o2) at (-3.5+3,0) {$t_2$};
+\node[labelword](o3) at (-3.5+3+3,0) {$t_3$};
+\node[labelword](o4) at (-3.5+3+3+3,0) {$t_4$};
+\node[labelword](o5) at (-3.5+3+3+3+3,0) {$\dots$};
+\node[labelword](o6) at (-3.5+3+3+3+3+3,0) {$t_n$};
+
+\draw[->] (i1) -> (m1);
+\draw[->] (i2) -> (m1);
+\draw[->] (i3) -> (m1);
+\draw[->] (i4) -> (m1);
+\draw[->] (i6) -> (m1);
+
+\draw[->] (m1) -> (o1);
+\draw[->] (m1) -> (o2);
+\draw[->] (m1) -> (o3);
+\draw[->] (m1) -> (o4);
+\draw[->] (m1) -> (o6);
+
+
+\end{tikzpicture} 
